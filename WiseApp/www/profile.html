@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Wise App – Profile</title>
+
+
+  <!-- Font Awesome -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+
+  <!-- Google Font -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  />
+
+
+  <!-- Profile CSS -->
+
+  <link
+    rel="stylesheet"
+    href="./css/profile.css"
+  />
+
+</head>
+
+
+<body>
+
+  <div class="container">
+
+    <main class="profile-page">
+
+
+      <!-- ========================================
+           HEADER
+      ======================================== -->
+
+      <header class="profile-page-header">
+
+        <a
+          href="./posts.html"
+          class="profile-back-btn"
+          aria-label="Back to posts"
+        >
+          <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+
+        <h1>
+          Profile
+        </h1>
+
+
+        <button
+          type="button"
+          id="edit-profile-btn"
+          class="edit-profile-btn"
+        >
+          Edit
+        </button>
+
+      </header>
+
+
+      <!-- ========================================
+           PROFILE INFORMATION
+      ======================================== -->
+
+      <section class="profile-info">
+
+        <div class="profile-avatar">
+
+          <img
+            id="profile-avatar-img"
+            src=""
+            alt="Profile picture"
+            hidden
+          />
+
+          <span
+            id="profile-avatar-letter"
+            aria-hidden="true"
+          >
+            U
+          </span>
+
+        </div>
+
+
+        <h2 id="profile-username">
+          Username
+        </h2>
+
+
+        <p
+          id="profile-email"
+          class="profile-email"
+        >
+          user@gmail.com
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           PROFILE DETAILS
+      ======================================== -->
+
+      <section class="profile-details">
+
+
+        <!-- EMAIL -->
+
+        <div class="profile-detail">
+
+          <div class="profile-detail-icon">
+
+            <i class="fa-solid fa-envelope"></i>
+
+          </div>
+
+
+          <div class="profile-detail-content">
+
+            <span>
+              Email
+            </span>
+
+            <strong id="profile-email-detail">
+              user@gmail.com
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- PHONE -->
+
+        <div class="profile-detail">
+
+          <div class="profile-detail-icon">
+
+            <i class="fa-solid fa-phone"></i>
+
+          </div>
+
+
+          <div class="profile-detail-content">
+
+            <span>
+              Phone number
+            </span>
+
+            <strong id="profile-phone">
+              Not added
+            </strong>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           ABOUT
+      ======================================== -->
+
+      <section class="profile-about">
+
+        <h3>
+          About
+        </h3>
+
+
+        <p id="profile-about-text">
+          Tell people a little about yourself.
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           EDIT PROFILE
+      ======================================== -->
+
+      <section
+        id="profile-edit-section"
+        class="profile-edit-section hidden"
+      >
+
+        <div class="edit-profile-card">
+
+
+          <!-- HEADER -->
+
+          <div class="edit-profile-header">
+
+            <h2>
+              Edit profile
+            </h2>
+
+
+            <button
+              type="button"
+              id="close-edit-profile-btn"
+              class="close-edit-btn"
+              aria-label="Close edit profile"
+            >
+
+              <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+          </div>
+
+
+          <!-- USERNAME -->
+
+          <div class="profile-form-group">
+
+            <label for="edit-username">
+              Username
+            </label>
+
+            <input
+              type="text"
+              id="edit-username"
+              placeholder="Enter your username"
+              maxlength="50"
+              autocomplete="name"
+            />
+
+          </div>
+
+
+          <!-- PHONE -->
+
+          <div class="profile-form-group">
+
+            <label for="edit-phone">
+              Phone number
+            </label>
+
+            <input
+              type="tel"
+              id="edit-phone"
+              placeholder="+234 800 000 0000"
+              maxlength="30"
+              autocomplete="tel"
+            />
+
+          </div>
+
+
+          <!-- PHOTO -->
+
+          <div class="profile-form-group">
+
+            <label for="edit-photo-url">
+              Profile picture URL
+            </label>
+
+            <input
+              type="url"
+              id="edit-photo-url"
+              placeholder="https://example.com/photo.jpg"
+              autocomplete="url"
+            />
+
+            <small>
+              Paste a link to your profile picture.
+            </small>
+
+          </div>
+
+
+          <!-- ABOUT -->
+
+          <div class="profile-form-group">
+
+            <label for="edit-about">
+              About you
+            </label>
+
+            <textarea
+              id="edit-about"
+              rows="5"
+              maxlength="500"
+              placeholder="Tell people a little about yourself..."
+            ></textarea>
+
+            <small>
+              Maximum 500 characters.
+            </small>
+
+          </div>
+
+
+          <!-- MESSAGE -->
+
+          <p
+            id="profile-message"
+            class="profile-message"
+            aria-live="polite"
+          ></p>
+
+
+          <!-- SAVE -->
+
+          <button
+            type="button"
+            id="save-profile-btn"
+            class="save-profile-btn"
+          >
+
+            <i class="fa-solid fa-check"></i>
+
+            Save changes
+
+          </button>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script
+    type="module"
+    src="./js/index.js"
+  ></script>
+
+</body>
+
+</html>

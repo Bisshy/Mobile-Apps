@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Wise App – My Posts</title>
+
+
+  <!-- ========================================
+       FONT AWESOME
+  ======================================== -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+
+  <!-- ========================================
+       GOOGLE FONTS
+  ======================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  />
+
+
+  <!-- ========================================
+       MAIN CSS
+  ======================================== -->
+
+  <link
+    rel="stylesheet"
+    href="./css/my-posts.css"
+  />
+</head>
+
+
+<body class="posts-page">
+
+  <div class="container">
+
+    <main
+      class="posts-section"
+      id="posts-section"
+    >
+
+
+      <!-- ========================================
+           HEADER
+      ======================================== -->
+
+      <header class="posts-header">
+
+
+        <!-- ======================================
+             TOP HEADER
+        ====================================== -->
+
+        <section class="hero-section">
+
+
+          <!-- ====================================
+               AVATAR
+          ==================================== -->
+
+          <div class="hero-img">
+
+            <button
+              id="avatar-btn"
+              class="avatar-btn"
+              type="button"
+              popovertarget="profile-menu"
+              aria-label="Open account menu"
+              aria-expanded="false"
+            >
+
+              <img
+                id="avatar-image"
+                class="avatar-image"
+                src=""
+                alt="Profile avatar"
+                hidden
+              />
+
+              <span
+                id="avatar-letter"
+                class="avatar-letter"
+                aria-hidden="true"
+              >
+                U
+              </span>
+
+            </button>
+
+          </div>
+
+
+          <!-- ====================================
+               PAGE TITLE
+          ==================================== -->
+
+          <div class="hero-content">
+
+            <h2>
+              My Posts
+            </h2>
+
+          </div>
+
+
+          <!-- ====================================
+               LOGOUT
+          ==================================== -->
+
+          <button
+            id="logout-btn"
+            class="logout-btn"
+            type="button"
+          >
+            Logout
+          </button>
+
+        </section>
+
+
+        <!-- ========================================
+             PROFILE POPOVER
+        ======================================== -->
+
+        <nav
+          id="profile-menu"
+          class="profile-menu"
+          popover
+          aria-label="Account menu"
+        >
+
+          <header class="profile-menu-user">
+
+            <strong id="profile-name">
+              User account
+            </strong>
+
+            <small id="profile-email">
+              @username
+            </small>
+
+          </header>
+
+
+          <ul class="profile-list">
+
+
+            <!-- PROFILE -->
+
+            <li>
+
+              <a
+                href="./profile.html"
+                class="profile-menu-link"
+              >
+                Profile
+              </a>
+
+            </li>
+
+
+            <!-- HOME / POSTS -->
+
+            <li>
+
+              <a
+                href="./posts.html"
+                class="profile-menu-link"
+              >
+                Post
+              </a>
+
+            </li>
+
+            <!-- BOOKMARKS -->
+
+            <li>
+
+              <a
+                href="./bookmark.html"
+                class="profile-menu-link"
+              >
+                Bookmarks
+              </a>
+
+            </li>
+
+            <!-- SETTINGS -->
+
+            <li>
+
+              <a
+                href="./settings.html"
+                class="profile-menu-link"
+              >
+                Settings
+              </a>
+
+            </li>
+
+          </ul>
+
+        </nav>
+
+
+        <!-- ========================================
+             HOME MENU
+        ======================================== -->
+
+        <nav class="home-menu">
+
+
+          <!-- MY POSTS -->
+
+          <a
+            href="./my-posts.html"
+            class="home-menu-link active"
+          >
+
+            <span
+              id="my-posts-btn"
+              class="home-menu-text"
+            >
+              My posts
+            </span>
+
+          </a>
+
+
+          <!-- LIKED POSTS -->
+
+          <a
+            href="./liked.html"
+            class="home-menu-link"
+          >
+
+            <span
+              id="liked-posts-btn"
+              class="home-menu-text"
+            >
+              Liked posts
+            </span>
+
+          </a>
+
+        </nav>
+
+      </header>
+
+
+      <!-- ========================================
+           MY POSTS
+      ======================================== -->
+
+      <section
+        class="posts-list"
+        id="my-posts-list"
+      >
+
+        <p id="user-message"></p>
+
+        <!-- My posts are inserted here -->
+
+      </section>
+
+
+      <!-- ========================================
+           FOOTER
+      ======================================== -->
+
+      <footer class="posts-footer">
+
+        <nav class="footer-menu">
+
+
+          <!-- HOME -->
+
+          <a
+            href="./posts.html"
+            class="nav-item active"
+            aria-label="Home"
+          >
+
+            <i class="fa-solid fa-house"></i>
+
+          </a>
+
+
+          <!-- SEARCH -->
+
+          <a
+            href="#"
+            class="nav-item"
+            aria-label="Search"
+          >
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+          </a>
+
+
+          <!-- NOTIFICATIONS -->
+
+          <a
+            href="#"
+            class="nav-item"
+            aria-label="Notifications"
+          >
+
+            <i class="fa-regular fa-bell"></i>
+
+          </a>
+
+        </nav>
+
+      </footer>
+
+
+      <!-- ========================================
+           FLOATING CREATE POST BUTTON
+      ======================================== -->
+
+      <button
+        id="add-post-btn"
+        class="add-post-btn"
+        type="button"
+        title="Create post"
+        aria-label="Create post"
+      >
+        +
+      </button>
+
+
+      <!-- ========================================
+           CREATE / EDIT POST MODAL
+      ======================================== -->
+
+      <dialog
+        id="post-modal"
+        class="post-modal"
+      >
+
+        <article class="post-box">
+
+
+          <!-- ======================================
+               MODAL HEADER
+          ====================================== -->
+
+          <header class="modal-header">
+
+
+            <!-- CLOSE -->
+
+            <button
+              id="close-post-btn"
+              class="close-post-btn"
+              type="button"
+              aria-label="Close post form"
+            >
+
+              <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <!-- TITLE -->
+
+            <strong id="post-modal-title">
+              Create post
+            </strong>
+
+
+            <!-- POST -->
+
+            <button
+              type="submit"
+              form="create-post-form"
+              id="post-submit-btn"
+              class="modal-publish-btn"
+            >
+              Post
+            </button>
+
+          </header>
+
+
+          <!-- ======================================
+               FORM
+          ====================================== -->
+
+          <form id="create-post-form">
+
+
+            <div class="composer">
+
+
+              <!-- COMPOSER AVATAR -->
+
+              <div
+                id="composer-avatar"
+                class="composer-avatar"
+              >
+                U
+              </div>
+
+
+              <!-- COMPOSER CONTENT -->
+
+              <div class="composer-content">
+
+
+                <!-- TITLE -->
+
+                <input
+                  id="post-title"
+                  type="text"
+                  placeholder="Post title"
+                  autocomplete="off"
+                  maxlength="100"
+                  required
+                />
+
+
+                <!-- CONTENT -->
+
+                <textarea
+                  id="post-content"
+                  placeholder="What's happening?"
+                  rows="5"
+                  maxlength="1000"
+                  required
+                ></textarea>
+
+              </div>
+
+            </div>
+
+
+            <!-- ====================================
+                 COMPOSER FOOTER
+            ==================================== -->
+
+            <div class="composer-footer">
+
+
+              <!-- ICONS -->
+
+              <div class="composer-icons">
+
+                <button
+                  type="button"
+                  aria-label="Add image"
+                >
+
+                  <i class="fa-regular fa-image"></i>
+
+                </button>
+
+
+                <button
+                  type="button"
+                  aria-label="Add emoji"
+                >
+
+                  <i class="fa-regular fa-face-smile"></i>
+
+                </button>
+
+              </div>
+
+
+              <!-- SUBMIT -->
+
+              <button
+                type="submit"
+                class="publish-btn"
+              >
+                Post
+              </button>
+
+            </div>
+
+          </form>
+
+
+          <!-- ====================================
+               MESSAGE
+          ==================================== -->
+
+          <p id="post-message"></p>
+
+        </article>
+
+      </dialog>
+
+    </main>
+
+  </div>
+
+
+  <!-- ========================================
+       JAVASCRIPT
+  ======================================== -->
+
+  <script
+    type="module"
+    src="./js/index.js"
+  ></script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color:#1f2937;
+}
+
+.app.header{
+    background:#17365d;
+    color:white;
+    text-align:center;
+    padding:22px 15px;
+}
+
+.app.headerh1{
+    margin: 0 0 6px;
+}
+
+.app.header p{
+    margin:0;
+}
+ .container{
+    width:min(92%, 600px);
+    margin:20px auto;
+ }
+
+ .card{
+    background:white;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+ }
+
+ input{
+    width:100%;
+    padding:12px;
+    margin:8px 0 10px;
+    border:1px solid #cbd5e1;
+    border-radius:8px;
+ }
+
+ button{
+    border:0;
+    border-radius:8px;
+    padding:10px 14px;
+    background:#1f4e79;
+    color:white;
+    cursor:pointer;
+ }
+
+ .botton-row{
+    display:flex;
+    gap:8px;
+ }
+
+ .counter{
+    font-size:32px;
+    font-weight: bold;
+ }
+
+ .status{
+    color:#9a6700;
+ }
+
+ .status.ready{
+    color:#137333;
+    font-weight:bold;
+ }
+
+ #trackList{
+    padding-left:0;
+    list-style:none;
+ }
+
+ #trackList li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:8px;
+    padding:10px;
+    margin-top:8px;
+    background:#eef4f8;
+    border-radius:8px;
+ }
+
+ .task-button{
+   margin: 0.4em;
+   padding:0.35em 0.75em;
+ }
+
+ .dark-mode{
+    background:#111827;
+    color:#f9fafb;
+ }
+
+ .dark-mode .card{
+    background:#1f2937;
+ }
+
+ .dark-mode .input{
+    background:#374151;
+    color:white;
+    border-color:#4b5563;
+ }

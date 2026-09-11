@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Wise App – Authentication</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Auth CSS -->
+  <link
+    rel="stylesheet"
+    href="./css/auth.css"
+  />
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- ========================================
+         LOGIN
+    ======================================== -->
+
+    <section
+      class="form-container"
+      id="login-section"
+    >
+
+      <div class="standinImg">
+        Brand Logo
+      </div>
+
+      <h2 class="form-heading">
+        Log in to Wise
+      </h2>
+
+
+      <form id="login-form">
+
+        <!-- EMAIL -->
+
+        <div class="input-group">
+
+          <i
+            class="fa-solid fa-envelope icon"
+            aria-hidden="true"
+          ></i>
+
+          <input
+            type="email"
+            name="email"
+            id="login-email"
+            class="passwordInput"
+            placeholder=" "
+            autocomplete="email"
+            required
+          />
+
+          <label for="login-email">
+            Email
+          </label>
+
+        </div>
+
+
+        <br />
+
+
+        <!-- PASSWORD -->
+
+        <div class="input-group">
+
+          <i
+            class="fa-solid fa-lock icon"
+            aria-hidden="true"
+          ></i>
+
+          <input
+            type="password"
+            name="password"
+            id="login-password"
+            class="passwordInput"
+            placeholder=" "
+            autocomplete="current-password"
+            required
+          />
+
+          <label for="login-password">
+            Password
+          </label>
+
+        </div>
+
+
+        <br />
+
+
+        <!-- LOGIN BUTTON -->
+
+        <button
+          type="submit"
+          id="login-button"
+          class="form-button"
+        >
+          Log in
+        </button>
+
+      </form>
+
+
+      <!-- SWITCH TO SIGNUP -->
+
+      <p class="form-paragraph">
+
+        Don't have an account?
+
+        <span
+          class="signup"
+          id="show-signin-button"
+          role="button"
+          tabindex="0"
+        >
+          Sign up
+
+          <i
+            class="fa-solid fa-angle-right"
+            aria-hidden="true"
+          ></i>
+
+        </span>
+
+      </p>
+
+
+      <!-- LOGIN MESSAGE -->
+
+      <p id="login-message"></p>
+
+    </section>
+
+
+
+    <!-- ========================================
+         SIGN UP
+    ======================================== -->
+
+    <section
+      class="form-container hidden"
+      id="signin-section"
+    >
+
+      <div class="standinImg">
+        Brand Logo
+      </div>
+
+      <h2 class="form-heading">
+        Sign up to Wise
+      </h2>
+
+
+      <form id="register-form">
+
+        <!-- USERNAME -->
+
+        <div class="input-group">
+
+          <i
+            class="fa-solid fa-user icon"
+            aria-hidden="true"
+          ></i>
+
+          <input
+            type="text"
+            name="username"
+            id="register-name"
+            class="username"
+            placeholder=" "
+            autocomplete="name"
+            required
+          />
+
+          <label for="register-name">
+            Username
+          </label>
+
+        </div>
+
+
+        <br />
+
+
+        <!-- PHONE -->
+
+        <div class="input-group">
+
+          <i
+            class="fa-solid fa-phone icon"
+            aria-hidden="true"
+          ></i>
+
+          <input
+            type="tel"
+            name="phone"
+            id="register-phone"
+            class="phone"
+            inputmode="tel"
+            autocomplete="tel"
+            placeholder=" "
+            required
+          />
+
+          <label for="register-phone">
+            Phone Number
+          </label>
+
+        </div>
+
+
+        <br />
+
+
+        <!-- EMAIL -->
+
+        <div class="input-group">
+
+          <i
+            class="fa-solid fa-envelope icon"
+            aria-hidden="true"
+          ></i>
+
+          <input
+            type="email"
+            name="email"
+            id="register-email"
+            class="passwordInput"
+            placeholder=" "
+            autocomplete="email"
+            required
+          />
+
+          <label for="register-email">
+            Email
+          </label>
+
+        </div>
+
+
+        <br />
+
+
+        <!-- PASSWORD -->
+
+        <div class="input-group">
+
+          <i
+            class="fa-solid fa-lock icon"
+            aria-hidden="true"
+          ></i>
+
+          <input
+            type="password"
+            name="password"
+            id="register-password"
+            class="passwordInput"
+            placeholder=" "
+            autocomplete="new-password"
+            required
+          />
+
+          <label for="register-password">
+            Password
+          </label>
+
+        </div>
+
+
+        <br />
+
+
+        <!-- SIGNUP BUTTON -->
+
+        <button
+          type="submit"
+          id="signin-button"
+          class="form-button"
+        >
+          Sign up
+        </button>
+
+      </form>
+
+
+      <!-- SWITCH TO LOGIN -->
+
+      <p class="form-paragraph">
+
+        Have an account?
+
+        <span
+          class="login"
+          id="show-login-button"
+          role="button"
+          tabindex="0"
+        >
+          Log in
+
+          <i
+            class="fa-solid fa-angle-right"
+            aria-hidden="true"
+          ></i>
+
+        </span>
+
+      </p>
+
+
+      <!-- SIGNUP MESSAGE -->
+
+      <p id="signin-message"></p>
+
+    </section>
+
+  </div>
+
+
+  <!-- ========================================
+       JAVASCRIPT
+  ======================================== -->
+
+  <script
+    type="module"
+    src="./js/index.js"
+  ></script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "cordova-android": "^15.1.0",
+    "typescript": "^7.0.2"
+  },
+  "cordova": {
+    "platforms": [
+      "android"
+    ]
+  }
+}

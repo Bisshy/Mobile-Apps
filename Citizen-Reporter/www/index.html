@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/index.css">
+
+    <title>Citizen Report App</title>
+</head>
+
+<body>
+    <header>
+        <h1>Citizen Reporter</h1>
+
+        <nav aria-label="Main navigation">
+            <a href="#dashboard">Dashboard</a>
+            <a href="#report">Report Issue</a>
+            <a href="#reports">Reports</a>
+        </nav>
+    </header>
+
+
+    <main>
+        <!-- Dashboard -->
+        <section id="dashboard">
+            <header>
+                <h2>Dashboard</h2>
+                <p>Total reports made by citizens</p>
+            </header>
+            <article>
+                <h3 id="totalReports">0</h3>
+                <p>Total Reports</p>
+            </article>
+        </section>
+
+        <!-- Report Issue -->
+        <section id="report">
+            <header>
+                <h2>Report an Issue</h2>
+                <p>Tell us about an issue in your community.</p>
+            </header>
+
+            <form class="reportForm" id="reportForm">
+
+                <fieldset>
+                    <legend>Issue Details</legend>
+
+                    <div>
+                        <label for="category">Category</label>
+                        <select name="category" id="category" required>
+                            <option value="">Select Category</option>
+                            <option value="road">Road</option>
+                            <option value="crime">Crime</option>
+                            <option value="power">Power</option>
+                            <option value="water">Water</option>
+                            <option value="fire">Fire</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="description">Description</label>
+                        <textarea
+                            name="description"
+                            id="description"
+                            rows="5"
+                            placeholder="Describe what happened in detail"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div>
+                        <label for="location">Location</label>
+                        <input
+                            type="text"
+                            id="location"
+                            name="location"
+                            placeholder="Enter Location"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit">
+                        Submit Report
+                    </button>
+
+                </fieldset>
+            </form>
+
+            <div class="success-overlay" id="successOverlay"></div>
+            
+            <aside 
+                id="successMessage"
+                class="success-card" aria-live="polite"
+            >
+                <span class="success-icon" aria-hidden="true">
+                    ✓
+                </span>             
+
+                <section>
+                    <h3>Report Submitted!</h3>
+                    <p>Your issue has been successfully submitted.</p>
+                </section>      
+                </aside>    
+        </section>
+
+         <!-- Reports -->
+        <section id="reports">
+            <header>
+                <h2>Reports</h2>
+                <p>View submitted community reports.</p>
+            </header>
+
+            <div id="reportsList">
+                <!-- Reports will be added here with TypeScript -->
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Citizen Reporter</p>
+    </footer>
+   
+    <script src="js/app.js"></script>
+</body>
+</html>

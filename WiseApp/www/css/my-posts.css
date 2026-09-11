@@ -1,0 +1,124 @@
+/* ========================================
+   MY POSTS CSS
+======================================== */
+
+/*
+  Load all shared posts styles first.
+  This means my-post.html gets the same
+  header, avatar, menu, footer, posts,
+  buttons and modal styling.
+*/
+
+@import url("./posts.css");
+
+
+/* ========================================
+   MY POSTS HEADING
+======================================== */
+
+.my-posts-heading {
+  width: 100%;
+
+  padding: 1rem;
+
+  border-bottom: 1px solid var(--border);
+
+  background: #fff;
+}
+
+
+.my-posts-heading h1 {
+  font-size: 1.2rem;
+
+  font-weight: 700;
+}
+
+
+.my-posts-heading p {
+  margin-top: 0.25rem;
+
+  color: var(--muted);
+
+  font-size: 0.85rem;
+}
+
+
+/* ========================================
+   MY POSTS BACK BUTTON
+======================================== */
+
+.my-posts-back-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.35rem;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--text);
+
+  padding: 0.5rem 0.75rem;
+
+  border-radius: 999px;
+
+  font-family: inherit;
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.my-posts-back-btn:hover {
+  background: var(--hover);
+}
+
+
+/* ========================================
+   MY POSTS LIST
+======================================== */
+
+#my-posts-list {
+  width: 100%;
+
+  max-width: 650px;
+
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   EMPTY MY POSTS
+======================================== */
+
+#my-posts-list .posts-empty,
+#my-posts-list .empty-profile-posts {
+  width: 100%;
+
+  padding: 3rem 1rem;
+
+  text-align: center;
+
+  color: var(--muted);
+
+  font-size: 0.95rem;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+  .my-posts-heading {
+    padding: 0.9rem 0.75rem;
+  }
+
+}

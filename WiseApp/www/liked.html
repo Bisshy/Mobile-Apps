@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Wise App – Liked Posts</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  />
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="./css/posts.css" />
+</head>
+
+<body>
+
+  <div class="container">
+
+    <main class="posts-section" id="posts-section">
+
+      <!-- ========================================
+           HEADER
+      ========================================= -->
+
+      <header class="posts-header">
+
+        <!-- ========================================
+             HERO
+        ========================================= -->
+
+        <section class="hero-section">
+
+          <!-- Profile / Avatar -->
+          <div class="hero-img">
+
+            <button
+              class="avatar-btn"
+              id="avatar-btn"
+              type="button"
+              popovertarget="profile-menu"
+              aria-label="Open account menu"
+              aria-expanded="false"
+            >
+
+              <div class="avatar">
+
+                <img
+                  id="avatar-image"
+                  class="avatar-image"
+                  src=""
+                  alt="Profile avatar"
+                  hidden
+                />
+
+                <span
+                  id="avatar-letter"
+                  class="avatar-letter"
+                  aria-hidden="true"
+                >
+                  U
+                </span>
+
+              </div>
+
+            </button>
+
+          </div>
+
+
+          <!-- ========================================
+               PROFILE POPOVER
+          ========================================= -->
+
+          <nav
+            id="profile-menu"
+            class="profile-menu"
+            popover
+            aria-label="Account menu"
+          >
+
+            <header class="profile-menu-user">
+
+              <strong id="profile-name">
+                User account
+              </strong>
+
+              <small id="profile-email">
+                @username
+              </small>
+
+            </header>
+
+
+            <ul class="profile-list">
+
+              <li>
+                <a
+                  href="./profile.html"
+                  class="profile-menu-link"
+                >
+                  Profile
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="./my-posts.html"
+                  class="profile-menu-link"
+                >
+                  My posts
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="./bookmark.html"
+                  class="profile-menu-link"
+                >
+                  Bookmarks
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="./settings.html"
+                  class="profile-menu-link"
+                >
+                  Settings
+                </a>
+              </li>
+
+            </ul>
+
+          </nav>
+
+
+          <!-- Page title -->
+          <div class="hero-content">
+
+            <h2>
+              Liked Posts
+            </h2>
+
+          </div>
+
+
+          <!-- Logout -->
+          <button
+            id="logout-btn"
+            class="logout-btn"
+            type="button"
+          >
+            Logout
+          </button>
+
+        </section>
+
+
+        <!-- ========================================
+             HOME MENU
+        ========================================= -->
+
+        <nav class="home-menu">
+
+          <!-- For You -->
+          <a
+            href="./posts.html"
+            class="home-menu-link"
+          >
+
+            <span
+              id="for-you-btn"
+              class="home-menu-text"
+              type="button"
+            >
+              For you
+        </span>
+
+          </a>
+
+
+          <!-- Liked Posts -->
+          <a
+            href="./liked.html"
+            class="home-menu-link active"
+          >
+
+            <span
+              id="liked-posts-btn"
+              class="active home-menu-text"
+              type="button"
+            >
+              Liked posts
+            </span>
+
+          </a>
+
+        </nav>
+
+      </header>
+
+
+      <!-- ========================================
+           LIKED POSTS
+      ========================================= -->
+
+      <section
+        class="posts-list"
+        id="liked-posts-list"
+      >
+
+        <p id="user-message"></p>
+
+        <!--
+          Liked posts will be inserted here
+          by index.js
+        -->
+
+      </section>
+
+
+      <!-- ========================================
+           FOOTER NAVIGATION
+      ========================================= -->
+
+      <footer class="posts-footer">
+
+        <nav class="footer-menu">
+
+          <!-- Home -->
+          <a
+            href="./posts.html"
+            class="nav-item"
+          >
+
+            <i class="fa-solid fa-house"></i>
+
+            <span class="sr-only">
+              Home
+            </span>
+
+          </a>
+
+
+          <!-- Liked -->
+          <a
+            href="./liked.html"
+            class="nav-item active"
+          >
+
+            <i class="fa-solid fa-heart"></i>
+
+            <span class="sr-only">
+              Liked posts
+            </span>
+
+          </a>
+
+
+          <!-- Search -->
+          <a
+            href="#"
+            class="nav-item"
+          >
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <span class="sr-only">
+              Search
+            </span>
+
+          </a>
+
+        </nav>
+
+      </footer>
+
+    </main>
+
+  </div>
+
+
+  <!-- ========================================
+       JAVASCRIPT
+  ========================================= -->
+
+  <script
+    type="module"
+    src="./js/index.js"
+  ></script>
+
+</body>
+</html>

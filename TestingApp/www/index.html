@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" href="css/index.css">
+        <title>BINCOM Student Task App</title>
+    </head>
+    <body>
+        <header class="app-header">
+            <h1>BINCOM Student app</h1>
+            <p>Learning Cordova + app.js</p>
+        </header>
+
+        <main class="container">
+            <section class="card">
+                <h2>App Status</h2>
+                <p id="cordovaStatus" class="status">Waiting for Cordova...</p>
+            </section>
+            <section class="card">
+                <h2>1. Student Greeting</h2>
+                <input type="text" id="nameInput" placeholder="Enter your name">
+                <button onclick="greetStudent()">Say Hello</button>
+                <p id="greetingOutput"></p>
+            </section>
+            <section class="card">
+                <h2>2. Simple Counter</h2>
+                <p class="counter" id="countOutput">0</p>
+                <div class="button-row">
+                    <button onclick="changeCount(-1)">-1</button>
+                    <button onclick="resetCounter()">Reset</button>
+                    <button onclick="changeCount(+1)">+1</button>
+                    <button onclick="changeCount(+5)">+5</button>
+                </div>
+            </section>
+            <section class="card">
+                <h2>3. Task List</h2>
+                <input type="text" id="taskInput" placeholder="Enter a task">
+                <button onclick="addTask()">Add Task</button>
+                <ul id="taskList"></ul>
+            </section>
+             <section class="card">
+                <h2>4. Small UI Feature</h2>
+                <button onclick="toggleTheme()">Toggle Theme</button>
+            </section>
+        </main>
+        <script src="js/app.js"></script>
+    </body>
+</html>
+ 

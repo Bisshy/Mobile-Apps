@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>04tut</title>
+</head>
+<body>
+    <div class="calculator-card">
+        <h2>Simple Calculator</h2>
+
+        <input type="number" id="numberOne" placeholder="First Number">
+        <input type="number" id="numberTwo" placeholder="Second Number">
+
+        <div class="button-row">
+            <button onclick="handleCalculation('add')">Add</button>
+            <button onclick="handleCalculation('substract')">Subtract</button>
+            <button onclick="handleCalculation('multiply')">Multiply</button>
+            <button onclick="handleCalculation()">Divide</button>
+        </div>
+        
+        <p id="answer"></p>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

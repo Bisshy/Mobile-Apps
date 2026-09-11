@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Student Grading App</title>
+</head>
+<body>
+    <main class="container">
+        <h1>Student Grading App</h1>
+        <form id="studentForm">
+            <label for="studentName">Student Name: </label>
+            <input 
+            type="text"
+            id="studentName"
+            placeholder="Student name"
+            >
+            <br>
+            <label for="mathScore">Math: </label>
+            <input 
+            type="number"
+            id="mathScore"
+            placeholder="Math"
+            >
+            <br>
+            <label for="englishScore">English: </label>
+            <input 
+            type="number"
+            id="englishScore"
+            placeholder="English"
+            >
+            <br>
+            <label for="scienceScore">Science:</label>
+            <input 
+            type="number"
+            id="scienceScore"
+            placeholder="Science"
+            >
+            <button 
+            type="submit"
+            id="getAverage"
+            >Average Score</button>
+        </form>
+        <p id="averageScore">Average Score:</p>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

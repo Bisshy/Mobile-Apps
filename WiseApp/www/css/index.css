@@ -1,0 +1,1599 @@
+/* ========================================
+   RESET
+======================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ========================================
+   VARIABLES
+======================================== */
+
+:root {
+  --background: #ffffff;
+  --text: #172033;
+
+  --primary: #1d9bf0;
+  --primary-dark: #1687d4;
+
+  --border: #eff3f4;
+  --muted: #536471;
+
+  --danger: #dc2626;
+  --success: #15803d;
+
+  --hover: #f7f9f9;
+
+  --edit: #2563eb;
+}
+
+
+/* ========================================
+   BASE
+======================================== */
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+
+  color: var(--text);
+  background: var(--background);
+
+  min-height: 100vh;
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/* ========================================
+   MY POSTS SECTION
+======================================== */
+
+.posts-section {
+  width: 100%;
+  min-height: 100vh;
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  grid-template-rows:
+    auto
+    1fr
+    auto;
+
+  grid-template-areas:
+    "header"
+    "posts"
+    "footer";
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.posts-header {
+  grid-area: header;
+
+  display: grid;
+
+  grid-template-rows:
+    auto
+    auto;
+
+  grid-template-areas:
+    "hero"
+    "menu";
+
+  background: #fff;
+
+  border-bottom: 1px solid var(--border);
+
+  position: sticky;
+  top: 0;
+
+  z-index: 100;
+}
+
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.hero-section {
+  grid-area: hero;
+
+  width: 100%;
+  height: 55px;
+
+  display: grid;
+
+  grid-template-columns:
+    50px
+    1fr
+    auto;
+
+  grid-template-areas:
+    "profile title logout";
+
+  align-items: center;
+
+  padding: 0 0.75rem;
+}
+
+
+/* ========================================
+   HEADER AVATAR
+======================================== */
+
+.hero-img {
+  grid-area: profile;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+/* Avatar button */
+
+.avatar-btn {
+  width: 36px;
+  height: 36px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: var(--primary);
+
+  color: #fff;
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  transition:
+    transform 0.15s ease,
+    opacity 0.2s ease;
+}
+
+
+.avatar-btn:hover {
+  opacity: 0.9;
+}
+
+
+.avatar-btn:active {
+  transform: scale(0.95);
+}
+
+
+.avatar-btn:focus-visible {
+  outline: 3px solid rgba(29, 155, 240, 0.25);
+}
+
+
+/* Avatar image */
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* Avatar letter */
+
+.avatar-letter {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  place-items: center;
+
+  color: #fff;
+
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+
+/* ========================================
+   HERO TITLE
+======================================== */
+
+.hero-content {
+  grid-area: title;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+}
+
+
+.hero-content h2 {
+  font-size: 1.3rem;
+
+  font-weight: 700;
+
+  text-align: center;
+}
+
+
+/* ========================================
+   LOGOUT
+======================================== */
+
+.logout-btn {
+  grid-area: logout;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--muted);
+
+  font-family: inherit;
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  padding: 0.45rem 0.7rem;
+
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.logout-btn:hover,
+.logout-btn:focus-visible {
+  background: var(--hover);
+
+  color: var(--danger);
+
+  outline: none;
+}
+
+
+/* ========================================
+   PROFILE MENU
+======================================== */
+
+.profile-menu {
+  position: fixed;
+
+  top: 55px;
+  left: 0.75rem;
+
+  width: 220px;
+
+  margin: 0;
+  padding: 0.2rem 0;
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  background: #fff;
+
+  box-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.18);
+
+  z-index: 1000;
+}
+
+
+/* Native popover */
+
+.profile-menu:not(:popover-open) {
+  display: none;
+}
+
+
+/* Profile user */
+
+.profile-menu-user {
+  display: grid;
+
+  gap: 3px;
+
+  padding: 0.75rem 1rem;
+
+  border-bottom: 1px solid var(--border);
+}
+
+
+.profile-menu-user strong {
+  font-size: 0.95rem;
+}
+
+
+.profile-menu-user small {
+  color: var(--muted);
+
+  font-size: 0.8rem;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+/* Profile list */
+
+.profile-list {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Profile links */
+
+.profile-menu-link {
+  display: block;
+
+  width: 100%;
+
+  padding: 0.75rem 1rem;
+
+  color: #0f1419;
+
+  text-decoration: none;
+
+  font-family: inherit;
+
+  font-size: 0.95rem;
+
+  transition:
+    background-color 0.2s ease;
+}
+
+
+.profile-menu-link:hover,
+.profile-menu-link:focus-visible {
+  background: var(--hover);
+
+  outline: none;
+}
+
+
+/* ========================================
+   HOME MENU / TOP TABS
+======================================== */
+
+.home-menu {
+  grid-area: menu;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  width: 100%;
+}
+
+
+.home-menu-link {
+  min-height: 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  text-decoration: none;
+
+  color: var(--muted);
+}
+
+
+.home-menu-text {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  color: var(--muted);
+}
+
+
+.home-menu-link:hover {
+  background: var(--hover);
+}
+
+
+/* Active tab */
+
+.home-menu-link.active::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 0;
+
+  left: 0;
+  right: 0;
+
+  height: 3px;
+
+  background: var(--primary);
+
+  border-radius:
+    10px 10px 0 0;
+}
+
+
+.home-menu-link.active .home-menu-text {
+  color: #0f1419;
+}
+
+
+/* ========================================
+   POSTS AREA
+======================================== */
+
+.posts-list {
+  grid-area: posts;
+
+  width: 100%;
+
+  max-width: 600px;
+
+  margin: 0 auto;
+
+  padding-bottom: 100px;
+
+  overflow-y: auto;
+}
+
+
+/* ========================================
+   MY POSTS PAGE TITLE
+======================================== */
+
+.my-posts-heading {
+  width: 100%;
+
+  padding:
+    1rem;
+
+  border-bottom: 1px solid var(--border);
+
+  background: #fff;
+}
+
+
+.my-posts-heading h1 {
+  font-size: 1.2rem;
+
+  font-weight: 700;
+}
+
+
+.my-posts-heading p {
+  margin-top: 0.25rem;
+
+  color: var(--muted);
+
+  font-size: 0.85rem;
+}
+
+
+/* ========================================
+   BACK BUTTON
+======================================== */
+
+.my-posts-back-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.35rem;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--text);
+
+  padding: 0.5rem 0.75rem;
+
+  border-radius: 999px;
+
+  font-family: inherit;
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.my-posts-back-btn:hover {
+  background: var(--hover);
+}
+
+
+/* ========================================
+   POST
+======================================== */
+
+.post {
+  width: 100%;
+
+  padding:
+    0.9rem 1rem;
+
+  border-bottom: 1px solid var(--border);
+
+  background: #fff;
+
+  transition:
+    background-color 0.2s ease;
+}
+
+
+.post:hover {
+  background: var(--hover);
+}
+
+
+/* ========================================
+   POST USER
+======================================== */
+
+.post-user-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 0.625rem;
+}
+
+
+/* Post avatar */
+
+.post-avatar {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  background: var(--primary);
+}
+
+
+/* User details */
+
+.post-user-details {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.post-user-details strong {
+  font-size: 0.95rem;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+.post-user-details small {
+  color: var(--muted);
+
+  font-size: 0.8rem;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+/* ========================================
+   POST TITLE
+======================================== */
+
+.post-title {
+  margin:
+    0.3rem 0 0.25rem;
+
+  font-size: 1.1rem;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  overflow-wrap: break-word;
+}
+
+
+/* ========================================
+   POST CONTENT
+======================================== */
+
+.post-text {
+  margin:
+    0.5rem 0 0;
+
+  font-size: 0.95rem;
+
+  line-height: 1.5;
+
+  overflow-wrap: break-word;
+
+  white-space: pre-wrap;
+}
+
+
+/* ========================================
+   POST ACTIONS
+======================================== */
+
+.post-actions-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.65rem;
+
+  margin-top: 0.8rem;
+
+  flex-wrap: wrap;
+}
+
+
+.post-actions-buttons button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.4rem;
+
+  padding:
+    0.5rem 0.85rem;
+
+  border: 1px solid transparent;
+
+  border-radius: 999px;
+
+  background: transparent;
+
+  font-family: inherit;
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+
+
+.post-actions-buttons button:active {
+  transform: scale(0.96);
+}
+
+
+.post-actions-buttons button:disabled {
+  opacity: 0.6;
+
+  cursor: wait;
+}
+
+
+/* ========================================
+   LIKE
+======================================== */
+
+.like-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.4rem;
+
+  padding:
+    0.5rem 0.85rem;
+
+  border: 1px solid var(--border);
+
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: var(--muted);
+
+  font-family: inherit;
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+
+.like-btn:hover {
+  background: #fff1f2;
+
+  color: #e11d48;
+
+  border-color: #fecdd3;
+}
+
+
+.like-btn:active {
+  transform: scale(0.95);
+}
+
+
+.like-btn.liked {
+  color: #e11d48;
+
+  background: #fff1f2;
+
+  border-color: #fecdd3;
+}
+
+
+.like-icon {
+  font-size: 1rem;
+
+  line-height: 1;
+}
+
+
+/* ========================================
+   EDIT BUTTON
+======================================== */
+
+.edit-btn {
+  color: var(--edit);
+
+  border-color:
+    var(--edit) !important;
+}
+
+
+.edit-btn:hover,
+.edit-btn:focus-visible {
+  background: var(--edit);
+
+  color: #fff;
+
+  outline: none;
+}
+
+
+/* ========================================
+   DELETE BUTTON
+======================================== */
+
+.delete-btn {
+  color: var(--danger);
+
+  border-color:
+    var(--danger) !important;
+}
+
+
+.delete-btn:hover,
+.delete-btn:focus-visible {
+  background: var(--danger);
+
+  color: #fff;
+
+  outline: none;
+}
+
+
+/* ========================================
+   EMPTY / LOADING STATE
+======================================== */
+
+.posts-list:empty {
+  min-height: 150px;
+}
+
+
+.posts-empty {
+  width: 100%;
+
+  padding: 3rem 1rem;
+
+  text-align: center;
+
+  color: var(--muted);
+
+  font-size: 0.95rem;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.posts-footer {
+  grid-area: footer;
+
+  width: 100%;
+
+  border-top: 1px solid var(--border);
+
+  background: #fff;
+
+  position: sticky;
+
+  bottom: 0;
+
+  z-index: 90;
+}
+
+
+.footer-menu {
+  width: 100%;
+
+  height: 65px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+}
+
+
+.footer-menu .nav-item {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+
+  place-items: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--muted);
+
+  font-size: 1.1rem;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.footer-menu .nav-item i {
+  font-size: 1.3rem;
+}
+
+
+.footer-menu .nav-item:hover {
+  background: var(--hover);
+}
+
+
+.footer-menu .nav-item.active {
+  color: #0f1419;
+}
+
+
+/* ========================================
+   CREATE POST BUTTON
+======================================== */
+
+/*
+  This is important for my-posts.html.
+
+  The button remains visible on the My Posts page
+  and opens the same create-post modal.
+*/
+
+.add-post-btn {
+  position: fixed;
+
+  right: 1rem;
+
+  bottom: 5.2rem;
+
+  width: 3.5rem;
+  height: 3.5rem;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: var(--primary);
+
+  color: #fff;
+
+  font-size: 1.6rem;
+
+  display: grid;
+
+  place-items: center;
+
+  cursor: pointer;
+
+  z-index: 200;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.25);
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.add-post-btn:hover {
+  background: var(--primary-dark);
+
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+.add-post-btn:active {
+  transform: scale(0.94);
+}
+
+
+.add-post-btn:focus-visible {
+  outline:
+    3px solid rgba(29, 155, 240, 0.3);
+
+  outline-offset: 3px;
+}
+
+
+/* ========================================
+   CREATE POST BUTTON LABEL
+======================================== */
+
+.create-post-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.45rem;
+
+  padding:
+    0.7rem 1.1rem;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: var(--primary);
+
+  color: #fff;
+
+  font-family: inherit;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+
+.create-post-btn:hover {
+  background: var(--primary-dark);
+}
+
+
+.create-post-btn:active {
+  transform: scale(0.96);
+}
+
+
+/* ========================================
+   POST MODAL
+======================================== */
+
+.post-modal {
+  width: min(600px, 92vw);
+  max-height: 90vh;
+
+  margin: auto;
+  padding: 0;
+
+  border: none;
+  border-radius: 15px;
+
+  background: #fff;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.post-modal::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+
+
+/* Modal content */
+
+.post-box {
+  width: 100%;
+
+  background: #fff;
+}
+
+
+/* ========================================
+   MODAL HEADER
+======================================== */
+
+.modal-header {
+  height: 55px;
+
+  display: grid;
+
+  grid-template-columns:
+    50px
+    1fr
+    70px;
+
+  align-items: center;
+
+  padding:
+    0 0.75rem;
+
+  border-bottom:
+    1px solid var(--border);
+}
+
+
+.modal-header strong {
+  text-align: center;
+
+  font-size: 1rem;
+}
+
+
+/* ========================================
+   CLOSE MODAL
+======================================== */
+
+.close-post-btn {
+  width: 38px;
+  height: 38px;
+
+  border: none;
+
+  background: transparent;
+
+  border-radius: 50%;
+
+  color: var(--muted);
+
+  font-size: 1.1rem;
+
+  cursor: pointer;
+}
+
+
+.close-post-btn:hover {
+  background: var(--hover);
+}
+
+
+.close-post-btn:focus-visible {
+  outline:
+    3px solid rgba(29, 155, 240, 0.2);
+}
+
+
+/* ========================================
+   MODAL PUBLISH BUTTON
+======================================== */
+
+.modal-publish-btn {
+  justify-self: end;
+
+  padding:
+    0.5rem 0.875rem;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: var(--primary);
+
+  color: #fff;
+
+  font-family: inherit;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.modal-publish-btn:hover {
+  background: var(--primary-dark);
+}
+
+
+.modal-publish-btn:disabled {
+  opacity: 0.6;
+
+  cursor: wait;
+}
+
+
+/* ========================================
+   COMPOSER
+======================================== */
+
+.composer {
+  display: grid;
+
+  grid-template-columns:
+    42px
+    1fr;
+
+  gap: 12px;
+
+  padding: 1rem;
+}
+
+
+/* Composer avatar */
+
+.composer-avatar {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: var(--primary);
+
+  color: #fff;
+
+  display: grid;
+
+  place-items: center;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  flex-shrink: 0;
+}
+
+
+/* Composer content */
+
+.composer-content {
+  min-width: 0;
+}
+
+
+/* ========================================
+   POST TITLE INPUT
+======================================== */
+
+#post-title {
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  font-family: inherit;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  margin-bottom: 0.75rem;
+
+  background: transparent;
+
+  color: var(--text);
+}
+
+
+#post-title::placeholder {
+  color: var(--muted);
+}
+
+
+/* ========================================
+   POST CONTENT INPUT
+======================================== */
+
+#post-content {
+  width: 100%;
+
+  min-height: 120px;
+
+  border: none;
+
+  outline: none;
+
+  resize: vertical;
+
+  font-family: inherit;
+
+  font-size: 1.05rem;
+
+  line-height: 1.4;
+
+  background: transparent;
+
+  color: var(--text);
+}
+
+
+#post-content::placeholder {
+  color: var(--muted);
+}
+
+
+/* ========================================
+   COMPOSER FOOTER
+======================================== */
+
+.composer-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding:
+    0.6rem 1rem;
+
+  border-top:
+    1px solid var(--border);
+}
+
+
+/* ========================================
+   COMPOSER ICONS
+======================================== */
+
+.composer-icons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.25rem;
+}
+
+
+.composer-icons button {
+  width: 35px;
+  height: 35px;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--primary);
+
+  cursor: pointer;
+
+  border-radius: 50%;
+}
+
+
+.composer-icons button:hover {
+  background: var(--hover);
+}
+
+
+/* ========================================
+   PUBLISH BUTTON
+======================================== */
+
+.publish-btn {
+  padding:
+    0.6rem 1.2rem;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: var(--primary);
+
+  color: #fff;
+
+  font-family: inherit;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.publish-btn:hover {
+  background: var(--primary-dark);
+}
+
+
+.publish-btn:disabled {
+  opacity: 0.6;
+
+  cursor: wait;
+}
+
+
+/* ========================================
+   POST MESSAGE
+======================================== */
+
+#post-message,
+#user-message {
+  padding:
+    0.75rem 1rem;
+
+  font-size: 0.9rem;
+
+  color: var(--muted);
+
+  text-align: center;
+}
+
+
+.valid {
+  color: var(--success);
+}
+
+
+.danger {
+  color: var(--danger);
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+  .hero-section {
+    padding:
+      0 0.6rem;
+  }
+
+
+  .hero-content h2 {
+    font-size: 1.15rem;
+  }
+
+
+  .logout-btn {
+    font-size: 0.8rem;
+
+    padding:
+      0.4rem 0.55rem;
+  }
+
+
+  .post {
+    padding:
+      0.8rem 0.75rem;
+  }
+
+
+  .post-actions-buttons {
+    gap: 0.45rem;
+  }
+
+
+  .post-actions-buttons button,
+  .like-btn {
+    padding:
+      0.45rem 0.7rem;
+
+    font-size: 0.8rem;
+  }
+
+
+  .add-post-btn {
+    right: 0.9rem;
+
+    bottom: 5.3rem;
+
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+
+
+  .profile-menu {
+    left: 0.5rem;
+
+    width: 210px;
+  }
+
+
+  .post-modal {
+    width: 94vw;
+
+    border-radius: 12px;
+  }
+
+
+  .modal-header {
+    grid-template-columns:
+      45px
+      1fr
+      80px;
+  }
+
+
+  .composer {
+    grid-template-columns:
+      36px
+      1fr;
+
+    gap: 10px;
+
+    padding:
+      0.8rem;
+  }
+
+
+  .composer-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+
+  #post-content {
+    min-height: 110px;
+
+    font-size: 1rem;
+  }
+
+
+  .composer-footer {
+    padding:
+      0.5rem 0.75rem;
+  }
+
+}
+
+
+/* ========================================
+   TABLET / DESKTOP
+======================================== */
+
+@media (min-width: 768px) {
+
+  .posts-section {
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    grid-template-rows:
+      auto
+      1fr
+      auto;
+  }
+
+
+  .posts-list {
+    max-width: 650px;
+  }
+
+
+  .add-post-btn {
+    right: 2rem;
+
+    bottom: 6rem;
+
+    width: 4rem;
+    height: 4rem;
+  }
+
+}

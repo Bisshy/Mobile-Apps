@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Wise App – Bookmarks</title>
+
+
+  <!-- ========================================
+       FONT AWESOME
+  ======================================== -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+
+  <!-- ========================================
+       GOOGLE FONTS
+  ======================================== -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  />
+
+
+  <!-- ========================================
+       BOOKMARK CSS
+
+       bookmark.css imports posts.css
+  ======================================== -->
+
+  <link
+    rel="stylesheet"
+    href="./css/bookmark.css"
+  />
+
+</head>
+
+
+<body class="bookmark-page">
+
+
+  <div class="container">
+
+
+    <main
+      class="bookmark-section"
+      id="bookmark-section"
+    >
+
+
+      <!-- ========================================
+           HEADER
+      ======================================== -->
+
+      <header class="bookmark-header">
+
+
+        <!-- ======================================
+             TOP HEADER
+        ====================================== -->
+
+        <section class="hero-section">
+
+
+          <!-- ======================================
+               AVATAR
+          ====================================== -->
+
+          <div class="hero-img">
+
+            <button
+              id="avatar-btn"
+              class="avatar-btn"
+              type="button"
+              popovertarget="profile-menu"
+              aria-label="Open account menu"
+              aria-expanded="false"
+            >
+
+              <img
+                id="avatar-image"
+                class="avatar-image"
+                src=""
+                alt="Profile avatar"
+                hidden
+              />
+
+
+              <span
+                id="avatar-letter"
+                class="avatar-letter"
+                aria-hidden="true"
+              >
+                U
+              </span>
+
+            </button>
+
+          </div>
+
+
+          <!-- ======================================
+               TITLE
+          ====================================== -->
+
+          <div class="hero-content">
+
+            <h2>
+              Bookmarks
+            </h2>
+
+          </div>
+
+
+          <!-- ======================================
+               LOGOUT
+          ====================================== -->
+
+          <button
+            id="logout-btn"
+            class="logout-btn"
+            type="button"
+          >
+            Logout
+          </button>
+
+
+        </section>
+
+
+        <!-- ========================================
+             PROFILE POPOVER
+        ======================================== -->
+
+        <nav
+          id="profile-menu"
+          class="profile-menu"
+          popover
+          aria-label="Account menu"
+        >
+
+
+          <header class="profile-menu-user">
+
+            <strong id="profile-name">
+              User account
+            </strong>
+
+            <small id="profile-email">
+              @username
+            </small>
+
+          </header>
+
+
+          <ul class="profile-list">
+
+
+            <li>
+
+              <a
+                href="./profile.html"
+                class="profile-menu-link"
+              >
+                Profile
+              </a>
+
+            </li>
+
+
+            <li>
+
+              <a
+                href="./my-posts.html"
+                class="profile-menu-link"
+              >
+                My posts
+              </a>
+
+            </li>
+
+
+            <li>
+
+              <a
+                href="./posts.html"
+                class="profile-menu-link"
+              >
+                Posts
+              </a>
+
+            </li>
+
+
+            <li>
+
+              <a
+                href="./liked.html"
+                class="profile-menu-link"
+              >
+                Liked posts
+              </a>
+
+            </li>
+
+
+            <li>
+
+              <a
+                href="./settings.html"
+                class="profile-menu-link"
+              >
+                Settings
+              </a>
+
+            </li>
+
+
+          </ul>
+
+
+        </nav>
+
+
+      </header>
+
+
+      <!-- ========================================
+           BOOKMARK LIST
+      ======================================== -->
+
+      <section
+        id="bookmark-list"
+        class="posts-list bookmark-list"
+      >
+
+        <p
+          id="bookmark-message"
+          class="bookmark-message"
+        >
+          Loading bookmarks...
+        </p>
+
+      </section>
+
+
+      <!-- ========================================
+           FOOTER
+      ======================================== -->
+
+      <footer
+        class="posts-footer bookmark-footer"
+      >
+
+
+        <nav class="footer-menu">
+
+
+          <!-- ======================================
+               HOME
+          ====================================== -->
+
+          <a
+            href="./posts.html"
+            class="nav-item"
+            aria-label="Home"
+          >
+
+            <i class="fa-solid fa-house"></i>
+
+          </a>
+
+
+          <!-- ======================================
+               SEARCH
+          ====================================== -->
+
+          <a
+            href="#"
+            class="nav-item"
+            aria-label="Search"
+          >
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+          </a>
+
+
+          <!-- ======================================
+               BOOKMARKS
+          ====================================== -->
+
+          <a
+            href="./bookmarks.html"
+            class="nav-item active"
+            aria-label="Bookmarks"
+          >
+
+            <i class="fa-solid fa-bookmark"></i>
+
+          </a>
+
+
+        </nav>
+
+
+      </footer>
+
+
+    </main>
+
+
+  </div>
+
+
+  <!-- ========================================
+       GLOBAL APP
+  ======================================== -->
+
+  <script
+    type="module"
+    src="./js/index.js"
+  ></script>
+
+
+  <!-- ========================================
+       BOOKMARK FUNCTIONALITY
+  ======================================== -->
+
+  <script
+    type="module"
+    src="./js/bookmark.js"
+  ></script>
+
+
+</body>
+
+</html>
