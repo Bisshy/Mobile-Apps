@@ -72,15 +72,15 @@ function redirectToLogin() {
 
 
   /*
-   * Your authentication page is auth.html.
+   * Your authentication page is index.html.
    */
 
   if (
-    currentPage !== "auth.html"
+    currentPage !== "index.html"
   ) {
 
     window.location.href =
-      "./auth.html";
+      "./index.html";
 
   }
 
