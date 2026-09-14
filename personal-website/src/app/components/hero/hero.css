@@ -1,0 +1,100 @@
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 5em 8%;
+    background: linear-gradient(135deg, #f8f9fa, #eef6ff);
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.greeting {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #007bff;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: clamp( 3rem, 7vw, 5.5rem);
+    line-height: 1;
+    color: #1f2937;
+}
+
+.hero-role {
+    margin: 1rem 0;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 600;
+    color: #6b7280;
+}
+
+.intro {
+    max-width: 650px;
+    margin: 1.5em 0 2em;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #6b7280;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-actions a {
+    padding: 0.8em 1.4em;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.hero-actions a:nth-child(1) {
+    background: #007bff;
+    color: #ffffff;
+}
+
+.hero-actions a:nth-child(2) {
+    border: 1px solid #007bff;
+    color: #007bff;
+}
+
+.hero-actions a:nth-child(3) {
+    border: 1px solid #374151;
+    color: #374151;
+}
+
+.hero-actions a:nth-child(1):hover {
+    background: #0056b3;
+}
+
+.hero-actions a:nth-child(2):hover {
+    background: #007bff;
+    color: #ffffff;
+}
+
+.hero-actions a:nth-child(3):hover {
+    background: #374151;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 80vh;
+        padding: 4em 6%;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-actions a {
+        width: 100%;
+        text-align: center;
+    }
+}
