@@ -1,0 +1,112 @@
+<ion-content>
+  <main class="edit-profile-page">
+    <header class="page-header">
+      <ion-button
+        fill="clear"
+        type="button"
+        (click)="cancel()"
+        aria-label="Go back"
+      >
+        ←
+      </ion-button>
+
+      <div>
+        <p class="section-label">Account</p>
+        <h1>Edit Profile</h1>
+      </div>
+    </header>
+
+    <section class="profile-photo-section" aria-labelledby="photo-heading">
+      <div class="profile-image">
+        <app-avatar
+          [username]="username"
+          [photoUrl]="profilePhotoChanged ? profileImage : userProfile?.photoURL"
+          alt="Profile picture"
+        />
+      </div>
+
+      <h2 id="photo-heading">Profile Photo</h2>
+
+      <ion-button fill="clear" type="button" (click)="changeProfilePhoto()">
+        Change Photo
+      </ion-button>
+
+      <!-- Browser file picker -->
+      <input
+        id="profilePhotoInput"
+        type="file"
+        accept="image/*"
+        hidden
+        (change)="onProfilePhotoSelected($event)"
+      />
+    </section>
+
+    <form class="profile-form" (ngSubmit)="saveChanges()">
+      <section class="form-section" aria-labelledby="account-heading">
+        <p class="card-label">Account Information</p>
+
+        <h2 id="account-heading">Personal Details</h2>
+
+        <ion-item>
+          <ion-input
+            label="Username"
+            labelPlacement="stacked"
+            type="text"
+            [(ngModel)]="username"
+            name="username"
+            required
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            label="Handle"
+            labelPlacement="stacked"
+            type="text"
+            [(ngModel)]="handle"
+            name="handle"
+            required
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            label="Email"
+            labelPlacement="stacked"
+            type="email"
+            [(ngModel)]="email"
+            name="email"
+            required
+          ></ion-input>
+        </ion-item>
+      </section>
+
+      <section class="profile-actions" aria-label="Profile actions">
+        <ion-button class="save-profile-button" expand="block" type="submit">
+          Save Changes
+        </ion-button>
+
+        <ion-button
+          class="cancel-button"
+          expand="block"
+          fill="outline"
+          type="button"
+          (click)="cancel()"
+        >
+          Cancel
+        </ion-button>
+      </section>
+    </form>
+  </main>
+</ion-content>
+
+<!-- Browser Webcam -->
+<ion-modal [isOpen]="isCameraOpen">
+  <ng-template>
+    <app-web-camera
+      (photoCaptured)="onWebPhotoCaptured($event)"
+      (cameraClosed)="closeWebCamera()"
+    >
+    </app-web-camera>
+  </ng-template>
+</ion-modal>

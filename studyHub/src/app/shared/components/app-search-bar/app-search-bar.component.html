@@ -1,0 +1,16 @@
+<div class="search-bar">
+  <ion-icon
+    class="search-icon"
+    [icon]="searchIcon"
+    aria-hidden="true"
+  ></ion-icon>
+
+  <ion-input
+    type="search"
+    [placeholder]="placeholder"
+    [value]="value"
+    [clearInput]="true"
+    aria-label="Search"
+    (ionInput)="onSearchChange($event)"
+  ></ion-input>
+</div>

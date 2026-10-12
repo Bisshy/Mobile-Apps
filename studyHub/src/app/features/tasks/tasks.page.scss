@@ -1,0 +1,432 @@
+ion-content {
+  --background: var(--studyhub-background);
+}
+
+.tasks-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2rem;
+}
+
+/* ---------------------------------
+   PAGE INTRO
+--------------------------------- */
+
+.tasks-intro {
+  margin-bottom: 2rem;
+}
+
+.tasks-intro .section-label {
+  margin: 0 0 0.5rem;
+
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 600;
+
+  color: var(--studyhub-text-secondary);
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tasks-intro h1 {
+  margin: 0;
+
+  font-size: var(--studyhub-font-size-2xl);
+  line-height: 1.2;
+  font-weight: 700;
+
+  color: var(--studyhub-text);
+}
+
+.tasks-description {
+  max-width: 600px;
+
+  margin: 0.75rem 0 0;
+
+  font-size: var(--studyhub-font-size-sm);
+  line-height: 1.5;
+
+  color: var(--studyhub-text-secondary);
+}
+
+/* ---------------------------------
+   SECTIONS
+--------------------------------- */
+
+.tasks-section,
+.completed-section {
+  margin-top: 2rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  font-size: var(--studyhub-font-size-lg);
+  font-weight: 700;
+
+  color: var(--studyhub-text);
+}
+
+.card-label {
+  margin: 0 0 0.5rem;
+
+  font-weight: 600;
+  font-size: var(--studyhub-font-size-sm);
+
+  color: var(--studyhub-text-secondary);
+}
+
+/* ---------------------------------
+   TASK LIST
+--------------------------------- */
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.75rem;
+
+  margin: 1rem 0 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.task-list li {
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------------------------------
+   TASK CARD
+--------------------------------- */
+
+.task-card {
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+
+  padding: 1rem;
+
+  background: var(--studyhub-surface);
+
+  border: 1px solid var(--studyhub-border);
+
+  border-radius: 1rem;
+
+  /*
+   * Allow vertical page scrolling while
+   * still allowing our horizontal swipe
+   * gesture to work.
+   */
+  touch-action: pan-y;
+
+  /*
+   * Used by the mobile swipe gesture.
+   */
+  transition: transform 180ms ease;
+
+  will-change: transform;
+}
+
+/* ---------------------------------
+   TASK INFORMATION
+--------------------------------- */
+
+.task-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.task-info h3 {
+  margin: 0;
+
+  font-size: var(--studyhub-font-size-md);
+  font-weight: 600;
+  line-height: 1.4;
+
+  color: var(--studyhub-text);
+}
+
+.task-info p {
+  margin: 0.5rem 0 0;
+
+  font-size: var(--studyhub-font-size-sm);
+
+  color: var(--studyhub-text-secondary);
+}
+
+/* ---------------------------------
+   COMPLETED TASK
+--------------------------------- */
+
+.task-card-completed {
+  opacity: 0.7;
+}
+
+.task-card-completed .task-info h3 {
+  color: var(--studyhub-text-secondary);
+
+  text-decoration: line-through;
+}
+
+/* ---------------------------------
+   CHECKBOX
+--------------------------------- */
+
+.task-checkbox {
+  flex-shrink: 0;
+
+  margin: 0;
+
+  --size: 2rem;
+
+  --border-radius: 50%;
+
+  --border-width: 1px;
+
+  --border-style: solid;
+
+  --border-color: var(--studyhub-border);
+
+  --checkbox-background: var(--studyhub-surface);
+
+  --checkbox-background-checked: var(--studyhub-primary);
+
+  --border-color-checked: var(--studyhub-surface);
+}
+
+/* ---------------------------------
+   TASK ACTIONS
+--------------------------------- */
+
+.task-actions {
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  gap: 0.25rem;
+}
+
+.task-actions ion-button {
+  margin: 0;
+}
+
+/* ---------------------------------
+   EMPTY STATE
+--------------------------------- */
+
+.empty-state {
+  padding: 1.5rem 1rem;
+
+  text-align: center;
+
+  background: var(--studyhub-surface);
+
+  border: 1px dashed var(--studyhub-border);
+
+  border-radius: 1rem;
+}
+
+.empty-state p {
+  margin: 0;
+
+  font-size: var(--studyhub-font-size-sm);
+
+  color: var(--studyhub-text-secondary);
+}
+
+/* ---------------------------------
+   ADD TASK
+--------------------------------- */
+
+.add-task-section {
+  margin-top: 1.5rem;
+}
+
+.add-task-button {
+  margin: 0;
+
+  --background: var(--studyhub-primary);
+
+  --color: var(--studyhub-white);
+
+  --border-radius: 0.875rem;
+
+  font-weight: 600;
+}
+
+/* ---------------------------------
+   MODAL
+--------------------------------- */
+
+ion-modal {
+  --background: var(--studyhub-surface);
+
+  --color: var(--studyhub-text);
+}
+
+/* =================================
+   DESKTOP
+================================= */
+
+@media (min-width: 1024px) {
+  .tasks-page {
+    max-width: 1100px;
+
+    padding: 3.5rem 3rem 4rem;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1.5fr)
+      minmax(340px, 1fr);
+
+    column-gap: 2rem;
+    row-gap: 2.5rem;
+  }
+
+  .tasks-intro {
+    max-width: 760px;
+
+    margin-bottom: 3.5rem;
+
+    grid-column: 1 / -1;
+  }
+
+  .tasks-intro h1 {
+    font-size: 2.5rem;
+  }
+
+  .tasks-description {
+    font-size: 1rem;
+  }
+
+  /* ---------------------------------
+     DESKTOP SECTIONS
+  --------------------------------- */
+
+  .tasks-section,
+  .completed-section {
+    margin-top: 0;
+  }
+
+  .tasks-section {
+    grid-column: 1;
+
+    padding-right: 1.5rem;
+  }
+
+  .completed-section {
+    grid-column: 2;
+
+    padding-left: 2rem;
+
+    border-left: 1px solid var(--studyhub-border);
+  }
+
+  .add-task-section {
+    grid-column: 1 / -1;
+
+    margin-top: 0;
+
+    padding-top: 0.5rem;
+  }
+
+  /* ---------------------------------
+     DESKTOP TASK LIST
+  --------------------------------- */
+
+  .task-list {
+    gap: 1rem;
+
+    margin-top: 1.5rem;
+  }
+
+  .task-card {
+    min-height: 82px;
+
+    padding: 1.25rem 1.5rem;
+
+    gap: 1.25rem;
+
+    border-radius: 1rem;
+
+    transition:
+      transform 160ms ease,
+      border-color 160ms ease,
+      box-shadow 160ms ease;
+  }
+
+  /* ---------------------------------
+     NOTIFICATION TASK HIGHLIGHT
+  --------------------------------- */
+
+  .task-highlighted {
+    animation: task-highlight 2.5s ease-out;
+  }
+
+  @keyframes task-highlight {
+    0% {
+      transform: scale(1.01);
+
+      box-shadow: 0 0 0 3px var(--studyhub-primary);
+    }
+
+    60% {
+      box-shadow: 0 0 0 3px var(--studyhub-primary);
+    }
+
+    100% {
+      transform: scale(1);
+
+      box-shadow: none;
+    }
+  }
+
+  /* ---------------------------------
+     DESKTOP HOVER
+  --------------------------------- */
+
+  .task-card:hover {
+    transform: translateY(-1px);
+
+    border-color: var(--studyhub-primary);
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  }
+
+  .task-info h3 {
+    font-size: var(--studyhub-font-size-md);
+  }
+
+  .task-actions {
+    gap: 0.5rem;
+  }
+
+  .add-task-button {
+    width: 100%;
+
+    min-height: 52px;
+  }
+}
+
+/* =================================
+   DESKTOP — DISABLE SWIPE MOVEMENT
+================================= */
+
+@media (min-width: 768px) {
+  .task-card {
+    transform: none !important;
+  }
+}

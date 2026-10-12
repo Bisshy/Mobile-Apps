@@ -1,0 +1,207 @@
+ion-content {
+  --background: var(--studyhub-background);
+}
+
+.edit-profile-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2rem;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.page-header ion-button {
+  margin: 0;
+  --color: var(--studyhub-text);
+  --padding-start: 0;
+  --padding-end: 0;
+}
+
+.page-header h1 {
+  margin: 0;
+  color: var(--studyhub-text);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.section-label {
+  margin: 0 0 0.25rem;
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 600;
+}
+
+.profile-photo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-image {
+  width: 6rem;
+  height: 6rem;
+  margin-bottom: 0.75rem;
+}
+
+.profile-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 3px solid var(--studyhub-surface);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
+}
+
+.profile-photo-section h2 {
+  margin: 0;
+  color: var(--studyhub-text);
+  font-size: var(--studyhub-font-size-md);
+  font-weight: 600;
+}
+
+.profile-photo-section ion-button {
+  margin-top: 0.25rem;
+  --color: var(--studyhub-primary);
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 600;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.card-label {
+  margin: 0;
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 600;
+  text-align: center;
+}
+
+.form-section h2 {
+  margin: 0 0 0.25rem;
+  color: var(--studyhub-text);
+  font-size: var(--studyhub-font-size-lg);
+  font-weight: 700;
+  text-align: center;
+}
+
+.form-section ion-item {
+  --background: var(--studyhub-surface);
+  --border-color: var(--studyhub-border);
+  --border-radius: var(--studyhub-radius-md);
+  --color: var(--studyhub-text);
+  --padding-start: 1rem;
+  --padding-end: 1rem;
+  --inner-padding-end: 0;
+  margin: 0;
+}
+
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.save-profile-button,
+.cancel-button {
+  width: 100%;
+  min-height: 3rem;
+  margin: 0;
+  font-size: var(--studyhub-font-size-md);
+  font-weight: 600;
+}
+
+.save-profile-button {
+  margin-top: 1rem;
+  width: 100%;
+
+  --background: var(--studyhub-primary);
+  --color: var(--studyhub-white);
+  --border-radius: var(--studyhub-radius-md);
+
+  font-size: var(--studyhub-font-size-md);
+  font-weight: 600;
+  min-height: 3rem;
+}
+
+.cancel-button {
+  --color: var(--studyhub-text);
+  --border-color: var(--studyhub-border-strong);
+  --border-radius: var(--studyhub-radius-md);
+}
+
+//--Desktop view
+
+@media (min-width: 1024px) {
+  .edit-profile-page {
+    max-width: 900px;
+    padding: 3rem 2.5rem 4rem;
+  }
+
+  .page-header {
+    margin-bottom: 3rem;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .profile-photo-section {
+    margin-bottom: 3rem;
+  }
+
+  .profile-image {
+    width: 7rem;
+    height: 7rem;
+    margin-bottom: 1rem;
+  }
+
+  .profile-form {
+    max-width: 650px;
+    margin: 0 auto;
+    gap: 2.5rem;
+  }
+
+  .form-section {
+    gap: 1rem;
+  }
+
+  .form-section ion-item {
+    --padding-start: 1.25rem;
+    --padding-end: 1.25rem;
+  }
+
+  .profile-actions {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  .save-profile-button,
+  .cancel-button {
+    width: auto;
+    min-width: 9rem;
+  }
+
+  .save-profile-button {
+    margin-top: 1rem;
+  }
+}

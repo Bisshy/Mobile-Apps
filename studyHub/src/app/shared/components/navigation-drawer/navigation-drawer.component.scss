@@ -1,0 +1,37 @@
+ion-menu-button {
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+ion-menu-button img,
+ion-menu-button .avatar-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2.25rem;
+  height: 2.25rem;
+  box-sizing: border-box;
+
+  border-radius: 50%;
+}
+
+ion-menu-button img {
+  object-fit: cover;
+}
+
+ion-menu-button .avatar-fallback {
+  padding: 0.25rem;
+
+  background: #eeedff;
+  color: #5145cd;
+
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+}

@@ -1,0 +1,17 @@
+.app-brand {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  margin-left: 1.5rem;
+}
+
+.app-brand img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.app-brand ion-title {
+  padding: 0 0 0 0.5rem;
+}

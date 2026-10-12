@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "238594488268",
+    "project_id": "studyhub-bincom",
+    "storage_bucket": "studyhub-bincom.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238594488268:android:68fe1a7b5ac0f6b1c58f69",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPp3X1GI9iCEY2XhPVfCADQQHY38OAgrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

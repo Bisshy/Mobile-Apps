@@ -1,0 +1,178 @@
+<ion-content>
+  <main class="security-page">
+    <header class="page-header">
+      <ion-button
+        fill="clear"
+        type="button"
+        (click)="cancel()"
+        aria-label="Go back"
+      >
+        ←
+      </ion-button>
+
+      <div>
+        <p class="section-label">Account & Security</p>
+        <h1>Security</h1>
+      </div>
+    </header>
+
+    <section class="security-intro" aria-labelledby="security-heading">
+      <p class="card-label">Change Password</p>
+
+      <h2 id="security-heading">Update your password</h2>
+
+      <p>Choose a strong password you don't use anywhere else.</p>
+    </section>
+
+    <form
+      #securityForm="ngForm"
+      class="security-form"
+      (ngSubmit)="savePassword()"
+    >
+      <section class="form-section" aria-labelledby="password-heading">
+        <h2 id="password-heading">Password Details</h2>
+
+        <!-- Current Password -->
+
+        <ion-item>
+          <ion-input
+            label="Current Password"
+            labelPlacement="stacked"
+            [type]="
+              showCurrentPassword
+                ? 'text'
+                : 'password'
+            "
+            [(ngModel)]="currentPassword"
+            name="currentPassword"
+            required
+          ></ion-input>
+
+          <ion-button
+            fill="clear"
+            slot="end"
+            type="button"
+            (click)="
+              toggleCurrentPasswordVisibility()
+            "
+            aria-label="Toggle current password visibility"
+          >
+            <ion-icon
+              [name]="
+                showCurrentPassword
+                  ? 'eye-off-outline'
+                  : 'eye-outline'
+              "
+            ></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <!-- New Password -->
+
+        <ion-item>
+          <ion-input
+            label="New Password"
+            labelPlacement="stacked"
+            [type]="
+              showNewPassword
+                ? 'text'
+                : 'password'
+            "
+            [(ngModel)]="newPassword"
+            name="newPassword"
+            minlength="8"
+            required
+          ></ion-input>
+
+          <ion-button
+            fill="clear"
+            slot="end"
+            type="button"
+            (click)="
+              toggleNewPasswordVisibility()
+            "
+            aria-label="Toggle new password visibility"
+          >
+            <ion-icon
+              [name]="
+                showNewPassword
+                  ? 'eye-off-outline'
+                  : 'eye-outline'
+              "
+            ></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <!-- Confirm Password -->
+
+        <ion-item>
+          <ion-input
+            label="Confirm New Password"
+            labelPlacement="stacked"
+            [type]="
+              showConfirmPassword
+                ? 'text'
+                : 'password'
+            "
+            [(ngModel)]="confirmPassword"
+            name="confirmPassword"
+            minlength="8"
+            required
+          ></ion-input>
+
+          <ion-button
+            fill="clear"
+            slot="end"
+            type="button"
+            (click)="
+              toggleConfirmPasswordVisibility()
+            "
+            aria-label="Toggle confirm password visibility"
+          >
+            <ion-icon
+              [name]="
+                showConfirmPassword
+                  ? 'eye-off-outline'
+                  : 'eye-outline'
+              "
+            ></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <p
+          *ngIf="
+            confirmPassword &&
+            !passwordMatch()
+          "
+          class="password-error"
+        >
+          Passwords do not match.
+        </p>
+      </section>
+
+      <section class="security-actions" aria-label="Security actions">
+        <ion-button
+          class="save-password-button"
+          expand="block"
+          type="submit"
+          [disabled]="
+            securityForm.invalid ||
+            !passwordMatch()
+          "
+        >
+          Save Password
+        </ion-button>
+
+        <ion-button
+          class="cancel-button"
+          expand="block"
+          fill="outline"
+          type="button"
+          (click)="cancel()"
+        >
+          Cancel
+        </ion-button>
+      </section>
+    </form>
+  </main>
+</ion-content>

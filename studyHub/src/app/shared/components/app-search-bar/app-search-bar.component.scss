@@ -1,0 +1,43 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  width: 100%;
+  min-height: 48px;
+
+  padding: 0 1rem;
+
+  background: var(--studyhub-surface);
+  border: 1px solid var(--studyhub-border);
+  border-radius: 0.875rem;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.search-bar:focus-within {
+  border-color: var(--studyhub-primary);
+
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--studyhub-primary) 12%, transparent);
+}
+
+.search-icon {
+  flex-shrink: 0;
+
+  font-size: 1.2rem;
+
+  color: var(--studyhub-text-secondary);
+}
+
+ion-input {
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+
+  font-size: var(--studyhub-font-size-sm);
+  color: var(--studyhub-text);
+}

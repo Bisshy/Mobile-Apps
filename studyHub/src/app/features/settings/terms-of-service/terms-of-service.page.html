@@ -1,0 +1,140 @@
+<ion-content>
+  <main class="terms-page">
+    <header class="page-header">
+      <ion-button
+        fill="clear"
+        type="button"
+        (click)="goBack()"
+        aria-label="Go back"
+      >
+        ←
+      </ion-button>
+
+      <div>
+        <p class="section-label">Legal</p>
+        <h1>Terms of Service</h1>
+      </div>
+    </header>
+
+    <section class="terms-intro" aria-labelledby="terms-heading">
+      <p class="card-label">Using Study Hub</p>
+
+      <h2 id="terms-heading">Terms for using Study Hub</h2>
+
+      <p>
+        These Terms of Service explain the basic rules and conditions for using
+        Study Hub.
+      </p>
+
+      <p class="last-updated">Last updated: {{ lastUpdated }}</p>
+    </section>
+
+    <ion-accordion-group>
+      <ion-accordion value="acceptance">
+        <ion-item slot="header">
+          <ion-label> Acceptance of Terms </ion-label>
+        </ion-item>
+
+        <div class="accordion-content" slot="content">
+          <p>
+            By creating an account or using Study Hub, you agree to follow these
+            Terms of Service and use the service responsibly.
+          </p>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="account">
+        <ion-item slot="header">
+          <ion-label> Your Account </ion-label>
+        </ion-item>
+
+        <div class="accordion-content" slot="content">
+          <p>
+            You are responsible for providing accurate account information and
+            keeping your account credentials secure.
+          </p>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="acceptable-use">
+        <ion-item slot="header">
+          <ion-label> Acceptable Use </ion-label>
+        </ion-item>
+
+        <div class="accordion-content" slot="content">
+          <p>
+            You agree to use Study Hub for legitimate educational and
+            organizational purposes and not to misuse, disrupt, or attempt to
+            interfere with the service.
+          </p>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="study-data">
+        <ion-item slot="header">
+          <ion-label> Your Study Data </ion-label>
+        </ion-item>
+
+        <div class="accordion-content" slot="content">
+          <p>
+            You retain responsibility for the tasks, schedules, notes, and other
+            information you create within Study Hub.
+          </p>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="availability">
+        <ion-item slot="header">
+          <ion-label> Service Availability </ion-label>
+        </ion-item>
+
+        <div class="accordion-content" slot="content">
+          <p>
+            Study Hub may be updated, changed, or temporarily unavailable from
+            time to time as the application is maintained and improved.
+          </p>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="changes">
+        <ion-item slot="header">
+          <ion-label> Changes to These Terms </ion-label>
+        </ion-item>
+
+        <div class="accordion-content" slot="content">
+          <p>
+            These Terms may be updated as Study Hub develops. Updated terms will
+            be reflected on this page with a revised update date.
+          </p>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="termination">
+        <ion-item slot="header">
+          <ion-label> Account Termination </ion-label>
+        </ion-item>
+
+        <div class="accordion-content" slot="content">
+          <p>
+            Access to Study Hub may be suspended or terminated if an account is
+            used in a way that violates these Terms or harms the service or
+            other users.
+          </p>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="contact">
+        <ion-item slot="header">
+          <ion-label> Contact </ion-label>
+        </ion-item>
+
+        <div class="accordion-content" slot="content">
+          <p>
+            If you have questions about these Terms, contact the Study Hub team
+            through the support channel provided with the app.
+          </p>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </main>
+</ion-content>

@@ -1,0 +1,13 @@
+<div class="camera-modal">
+  <div class="camera-preview">
+    <video #cameraVideo autoplay muted playsinline></video>
+  </div>
+
+  <div class="camera-actions">
+    <ion-button type="button" (click)="capturePhoto()"> Take Photo </ion-button>
+
+    <ion-button type="button" fill="outline" (click)="closeCamera()">
+      Cancel
+    </ion-button>
+  </div>
+</div>

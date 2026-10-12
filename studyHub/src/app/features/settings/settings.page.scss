@@ -1,0 +1,150 @@
+ion-content {
+  --background: var(--studyhub-backgr);
+}
+
+.settings-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var(--studyhub-space-lg) var(--studyhub-space-md)
+    var(--studyhub-space-xl);
+}
+
+.settings-intro {
+  margin-bottom: var(--studyhub-space-xl);
+}
+
+.section-label {
+  margin: 0 0 var(--studyhub-space-sm);
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 600;
+}
+
+.settings-intro h1 {
+  margin: 0;
+  color: var(--studyhub-text);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.settings-description {
+  margin: var(--studyhub-space-sm) 0 0;
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-md);
+  line-height: 1.5;
+}
+
+.settings-section {
+  margin-top: var(--studyhub-space-xl);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-label {
+  margin: 0 0 var(--studyhub-space-sm);
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 600;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: var(--studyhub-text);
+  font-size: var(--studyhub-font-size-lg);
+  font-weight: 700;
+}
+
+.settings-list {
+  overflow: hidden;
+  margin-top: var(--studyhub-space-md);
+  padding: 0;
+  background: var(--studyhub-surface);
+  border: 1px solid var(--studyhub-border);
+  border-radius: var(--studyhub-radius-xl);
+}
+
+.settings-list ion-item {
+  --background: var(--studyhub-surface);
+  --color: var(--studyhub-text);
+  --border-color: var(--studyhub-border);
+  --padding-start: var(--studyhub-space-md);
+  --padding-end: var(--studyhub-space-md);
+  --inner-padding-end: 0;
+  min-height: 4.5rem;
+}
+
+.settings-list ion-item:last-child {
+  --border-width: 0;
+}
+
+.settings-list ion-label {
+  margin-top: var(--studyhub-space-sm);
+  margin-bottom: var(--studyhub-space-sm);
+}
+
+.settings-list ion-label h3 {
+  margin: 0;
+  color: var(--studyhub-text);
+  font-size: var(--studyhub-font-size-md);
+  font-weight: 600;
+}
+
+.settings-list ion-label p {
+  margin: var(--studyhub-space-sm) 0 0;
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-sm);
+  line-height: 1.4;
+}
+
+.settings-list ion-toggle {
+  --track-background: var(--studyhub-border);
+  --track-background-checked: var(--studyhub-primary);
+  --handle-background: var(--studyhub-white);
+  --handle-background-checked: var(--studyhub-white);
+}
+
+.settings-list ion-select {
+  --color: var(--studyhub-text);
+  font-size: var(--studyhub-font-size-sm);
+}
+
+//---Desktop view
+@media (min-width: 1024px) {
+  .settings-page {
+    max-width: 1000px;
+    padding: 3rem 2.5rem 4rem;
+  }
+
+  .settings-intro {
+    margin-bottom: 3rem;
+  }
+
+  .settings-intro h1 {
+    font-size: 2rem;
+  }
+
+  .settings-section {
+    margin-top: 3rem;
+  }
+
+  .settings-list {
+    margin-top: 1.5rem;
+    border-radius: var(--studyhub-radius-xl);
+  }
+
+  .settings-list ion-item {
+    min-height: 5rem;
+    --padding-start: 1.5rem;
+    --padding-end: 1.5rem;
+  }
+
+  .settings-list ion-label {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+}

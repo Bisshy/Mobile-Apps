@@ -1,0 +1,126 @@
+ion-content {
+  --background: var(--studyhub-backgr);
+}
+
+.notifications-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var(--studyhub-space-lg) var(--studyhub-space-md)
+    var(--studyhub-space-xl);
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: var(--studyhub-space-sm);
+  margin-bottom: var(--studyhub-space-xl);
+}
+
+.page-header ion-button {
+  margin: 0;
+  --color: var(--studyhub-text);
+  --padding-start: 0;
+  --padding-end: 0;
+}
+
+.page-header h1 {
+  margin: 0;
+  color: var(--studyhub-text);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.section-label {
+  margin: 0 0 var(--studyhub-space-sm);
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 600;
+}
+
+.notifications-intro {
+  margin-bottom: var(--studyhub-space-xl);
+  text-align: center;
+}
+
+.card-label {
+  margin: 0 0 var(--studyhub-space-sm);
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 600;
+}
+
+.notifications-intro h2 {
+  margin: 0;
+  color: var(--studyhub-text);
+  font-size: var(--studyhub-font-size-xl);
+  font-weight: 700;
+}
+
+.notifications-intro p:last-child {
+  max-width: 600px;
+  margin: var(--studyhub-space-sm) auto 0;
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-md);
+  line-height: 1.6;
+}
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--studyhub-space-sm);
+}
+
+.notification-card {
+  display: flex;
+  gap: var(--studyhub-space-md);
+  padding: var(--studyhub-space-md);
+  background: var(--studyhub-surface);
+  border: 1px solid var(--studyhub-border);
+  border-radius: var(--studyhub-radius-xl);
+}
+
+.notification-indicator {
+  flex-shrink: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: 0.45rem;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.notification-unread .notification-indicator {
+  background: var(--studyhub-primary);
+}
+
+.notification-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.notification-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--studyhub-space-md);
+}
+
+.notification-header h3 {
+  margin: 0;
+  color: var(--studyhub-text);
+  font-size: var(--studyhub-font-size-md);
+  font-weight: 600;
+}
+
+.notification-header span {
+  flex-shrink: 0;
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-sm);
+}
+
+.notification-content p {
+  margin: var(--studyhub-space-sm) 0 0;
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-sm);
+  line-height: 1.5;
+}

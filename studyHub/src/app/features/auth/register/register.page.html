@@ -1,0 +1,213 @@
+<ion-content>
+  <main class="auth-page">
+    <section class="auth-container" aria-labelledby="register-heading">
+      <div class="auth-brand">
+        <img src="assets/images/mastericon.png" alt="Study Hub" />
+
+        <p>Study Hub</p>
+      </div>
+
+      <header class="auth-header">
+        <p class="auth-label">Get Started</p>
+
+        <h1 id="register-heading">Create your account</h1>
+
+        <p class="auth-description">
+          Set up your Study Hub account and start organizing your studies.
+        </p>
+      </header>
+
+      <form
+        class="auth-form"
+        #registerForm="ngForm"
+        (ngSubmit)="createAccount(registerForm)"
+      >
+        <fieldset>
+          <legend>Profile</legend>
+
+          <div class="register-profile">
+            <div class="register-profile-image">
+              <img
+                [src]="profileImage || 'assets/images/default-avatar.png'"
+                alt="Profile picture preview"
+              />
+            </div>
+
+            <ion-button
+              type="button"
+              fill="outline"
+              (click)="selectProfilePhoto()"
+            >
+              Add Profile Photo
+            </ion-button>
+
+            <!-- Browser / PWA file picker -->
+            <input
+              #profilePhotoInput
+              type="file"
+              accept="image/*"
+              hidden
+              (change)="onProfilePhotoSelected($event)"
+            />
+          </div>
+
+          @if (isCameraOpen) {
+          <app-web-camera
+            (photoCaptured)="onWebPhotoCaptured($event)"
+            (cameraClosed)="closeWebCamera()"
+          ></app-web-camera>
+          }
+          <!-- Username -->
+          <ion-item>
+            <ion-input
+              label="Username"
+              labelPlacement="stacked"
+              type="text"
+              name="username"
+              placeholder="Enter your username"
+              [(ngModel)]="username"
+              required
+            >
+            </ion-input>
+          </ion-item>
+
+          @if ( registerForm.controls['username']?.invalid &&
+          registerForm.controls['username']?.touched ) {
+          <p class="form-error">Please enter a username.</p>
+          }
+
+          <!-- Handle -->
+          <ion-item>
+            <ion-input
+              label="@Handle"
+              labelPlacement="stacked"
+              type="text"
+              name="handle"
+              placeholder="Choose your unique handle"
+              [(ngModel)]="handle"
+              required
+            >
+              <span slot="start">@</span>
+            </ion-input>
+          </ion-item>
+
+          @if ( registerForm.controls['handle']?.invalid &&
+          registerForm.controls['handle']?.touched ) {
+          <p class="form-error">Please choose a handle.</p>
+          }
+        </fieldset>
+
+        <!-- Account Details -->
+        <fieldset>
+          <legend>Account details</legend>
+
+          <!-- Email -->
+          <ion-item>
+            <ion-input
+              label="Email"
+              labelPlacement="stacked"
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              [(ngModel)]="email"
+              required
+              email
+            >
+            </ion-input>
+          </ion-item>
+
+          @if ( registerForm.controls['email']?.invalid &&
+          registerForm.controls['email']?.touched ) {
+          <p class="form-error">Please enter a valid email address.</p>
+          }
+
+          <!-- Password -->
+          <ion-item>
+            <ion-input
+              label="Password"
+              labelPlacement="stacked"
+              [type]="showPassword ? 'text' : 'password'"
+              name="password"
+              placeholder="Create a password"
+              [(ngModel)]="password"
+              required
+              minlength="8"
+            >
+              <ion-button
+                slot="end"
+                fill="clear"
+                type="button"
+                aria-label="Toggle password visibility"
+                (click)="togglePasswordVisibility()"
+              >
+                <ion-icon
+                  [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"
+                ></ion-icon>
+              </ion-button>
+            </ion-input>
+          </ion-item>
+
+          @if ( registerForm.controls['password']?.invalid &&
+          registerForm.controls['password']?.touched ) {
+          <p class="form-error">Password must be at least 8 characters.</p>
+          }
+
+          <!-- Confirm Password -->
+          <ion-item>
+            <ion-input
+              label="Confirm Password"
+              labelPlacement="stacked"
+              [type]="showConfirmPassword ? 'text' : 'password'"
+              name="confirmPassword"
+              placeholder="Re-enter your password"
+              [(ngModel)]="confirmPassword"
+              required
+              minlength="8"
+            >
+              <ion-button
+                slot="end"
+                fill="clear"
+                type="button"
+                aria-label="Toggle confirm password visibility"
+                (click)="toggleConfirmPasswordVisibility()"
+              >
+                <ion-icon
+                  [name]="
+                    showConfirmPassword
+                      ? 'eye-off-outline'
+                      : 'eye-outline'
+                  "
+                ></ion-icon>
+              </ion-button>
+            </ion-input>
+          </ion-item>
+
+          @if ( registerForm.controls['confirmPassword']?.invalid &&
+          registerForm.controls['confirmPassword']?.touched ) {
+          <p class="form-error">Password must be at least 8 characters.</p>
+          } @if (confirmPassword && password !== confirmPassword) {
+          <p class="form-error">Passwords do not match.</p>
+          }
+        </fieldset>
+
+        <!-- Submit -->
+        <ion-button
+          class="auth-button"
+          type="submit"
+          expand="block"
+          [disabled]="registerForm.invalid || !passwordMatch()"
+        >
+          Create Account
+        </ion-button>
+      </form>
+
+      <!-- Footer -->
+      <footer class="auth-footer">
+        <p>
+          Already have an account?
+          <a routerLink="/login">Log in</a>
+        </p>
+      </footer>
+    </section>
+  </main>
+</ion-content>

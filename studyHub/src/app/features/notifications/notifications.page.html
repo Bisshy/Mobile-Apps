@@ -1,0 +1,127 @@
+<ion-content>
+  <main class="notifications-page">
+    <header class="page-header">
+      <ion-button
+        fill="clear"
+        type="button"
+        (click)="goBack()"
+        aria-label="Go back"
+      >
+        ←
+      </ion-button>
+
+      <div>
+        <p class="section-label">Stay Updated</p>
+        <h1>Notifications</h1>
+      </div>
+    </header>
+
+    <section
+      class="notifications-intro"
+      aria-labelledby="notifications-heading"
+    >
+      <p class="card-label">Recent Activity</p>
+
+      <h2 id="notifications-heading">Your notifications</h2>
+
+      <p>
+        Stay up to date with reminders, messages, and activity from Study Hub.
+      </p>
+    </section>
+
+    @if (hasUnreadNotifications) {
+      <ion-button
+        fill="clear"
+        type="button"
+        (click)="markAllAsRead()"
+      >
+        Mark all as read
+      </ion-button>
+    }
+
+    <!-- Loading state -->
+    @if (loading) {
+    <section class="notifications-empty" aria-live="polite">
+      <p>Loading notifications...</p>
+    </section>
+    }
+
+    <!-- Error state -->
+    @if (!loading && errorMessage) {
+    <section class="notifications-empty" aria-live="assertive">
+      <p>{{ errorMessage }}</p>
+    </section>
+    }
+
+    <!-- Empty state -->
+    @if ( !loading && !errorMessage && notifications.length === 0 ) {
+    <section class="notifications-empty">
+      <p class="card-label">You're all caught up</p>
+
+      <h2>No notifications yet</h2>
+
+      <p>Task reminders and other Study Hub activity will appear here.</p>
+    </section>
+    }
+
+    <!-- Notifications -->
+    @if ( !loading && !errorMessage && notifications.length > 0 ) {
+    <section class="notifications-list" aria-label="Notifications">
+      @for ( notification of notifications; track notification.id ) {
+      <article
+        class="notification-card"
+        role="button"
+        tabindex="0"
+        (click)="openTask(notification)"
+        (keydown.enter)="openTask(notification)"
+        (keydown.space)="openTask(notification)"
+      >
+        <div class="notification-indicator"></div>
+
+        <div class="notification-content">
+          <!-- Notification header -->
+          <div class="notification-header">
+            <div>
+              <p class="notification-type">
+                {{ getNotificationTitle(notification) }}
+              </p>
+
+              <h3>{{ notification.task.title }}</h3>
+            </div>
+
+            <span class="notification-time">
+              {{ notification.sentAt | date: "short" }}
+            </span>
+          </div>
+
+          <!-- Notification message -->
+          <p class="notification-message">
+            {{ getNotificationMessage(notification) }}
+          </p>
+
+          <!-- Notification details -->
+          <div class="notification-details">
+            <span> Due: {{ notification.task.dueDate | date: "medium" }} </span>
+
+            <span
+              class="notification-priority"
+              [class.priority-high]="
+                    notification.task.priority === 'High'
+                  "
+              [class.priority-medium]="
+                    notification.task.priority === 'Medium'
+                  "
+              [class.priority-low]="
+                    notification.task.priority === 'Low'
+                  "
+            >
+              {{ getPriorityLabel(notification.task.priority) }}
+            </span>
+          </div>
+        </div>
+      </article>
+      }
+    </section>
+    }
+  </main>
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-button
+  fill="clear"
+  aria-label="More options"
+  type="button"
+  (click)="openMenu($event)"
+>
+  ...
+</ion-button>
+
+<ion-popover
+  [isOpen]="isMenuOpen"
+  [event]="menuEvent"
+  (didDismiss)="closeMenu()"
+  side="bottom"
+  alignment="end"
+>
+  <ng-template>
+    <ion-list>
+      <ion-item button detail="false" (click)="openProfile()">
+        <ion-label> Profile </ion-label>
+      </ion-item>
+
+      <ion-item button detail="false" (click)="openSettings()">
+        <ion-label> Settings </ion-label>
+      </ion-item>
+
+      <ion-item button detail="false" (click)="openAbout()">
+        <ion-label> About Study Hub </ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-template>
+</ion-popover>

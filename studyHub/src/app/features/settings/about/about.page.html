@@ -1,0 +1,63 @@
+<ion-content>
+  <main class="about-page">
+    <header class="page-header">
+      <ion-button
+        fill="clear"
+        type="button"
+        (click)="goBack()"
+        aria-label="Go back"
+      >
+        ←
+      </ion-button>
+
+      <div>
+        <p class="section-label">Study Hub</p>
+        <h1>About</h1>
+      </div>
+    </header>
+
+    <section class="about-hero" aria-labelledby="about-heading">
+      <div class="app-icon">
+        <img src="assets/images/mastericon.png" alt="Study Hub app icon" />
+      </div>
+
+      <p class="section-label">Study Hub</p>
+
+      <h2 id="about-heading">Your learning, organized.</h2>
+
+      <p class="about-description">
+        Study Hub helps students organize their tasks, manage their study
+        activities, and keep track of their academic progress.
+      </p>
+    </section>
+
+    <section class="about-section" aria-labelledby="version-heading">
+      <div class="about-card">
+        <div class="about-row">
+          <span class="about-label"> App Version </span>
+
+          <span class="about-value"> {{ appVersion }} </span>
+        </div>
+
+        <div class="about-row">
+          <span class="about-label"> Platform </span>
+
+          <span class="about-value"> Study Hub </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" aria-labelledby="purpose-heading">
+      <div class="about-card about-purpose">
+        <p class="card-label">Our Purpose</p>
+
+        <h2 id="purpose-heading">Built for better study habits</h2>
+
+        <p>
+          Study Hub is designed to make it easier to plan your studies, stay
+          organized, and focus on the things that matter.
+        </p>
+      </div>
+    </section>
+  </main>
+</ion-content>

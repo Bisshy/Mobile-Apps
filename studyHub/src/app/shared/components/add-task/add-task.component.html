@@ -1,0 +1,83 @@
+<article class="add-task" aria-labelledby="add-task-title">
+  <header class="add-task-header">
+    <h2 id="add-task-title">
+      {{ taskToEdit ? "Edit Task" : "Add Task" }}
+    </h2>
+
+    <p class="add-task-description">
+      {{
+        taskToEdit
+          ? "Update the details of your task."
+          : "Create a new task for your study schedule."
+      }}
+    </p>
+  </header>
+
+  <form class="add-task-form">
+    <fieldset>
+      <legend>Task details</legend>
+
+      <ion-item>
+        <ion-input
+          label="Task title"
+          labelPlacement="stacked"
+          type="text"
+          placeholder="Enter task title"
+          name="taskTitle"
+          [(ngModel)]="taskTitle"
+        >
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Due date"
+          labelPlacement="stacked"
+          type="date"
+          name="dueDate"
+          [(ngModel)]="dueDate"
+        >
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Due time"
+          labelPlacement="stacked"
+          type="time"
+          name="dueTime"
+          [(ngModel)]="dueTime"
+        >
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select
+          class="priority-select"
+          label="Priority"
+          labelPlacement="stacked"
+          placeholder="Select priority"
+          name="priority"
+          [(ngModel)]="priority"
+          interface="popover"
+        >
+          <ion-select-option value="Low"> Low </ion-select-option>
+
+          <ion-select-option value="Medium"> Medium </ion-select-option>
+
+          <ion-select-option value="High"> High </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </fieldset>
+  </form>
+
+  <footer class="add-task-actions">
+    <ion-button type="button" fill="clear" (click)="closeModal()">
+      Cancel
+    </ion-button>
+
+    <ion-button type="button" (click)="addTask()">
+      {{ taskToEdit ? "Save Changes" : "Add Task" }}
+    </ion-button>
+  </footer>
+</article>

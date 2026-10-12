@@ -1,0 +1,179 @@
+.auth-page {
+  min-height: 100%;
+  padding: 2rem 1.25rem;
+  background: var(--studyhub-background);
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+.auth-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.auth-brand img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.auth-brand p {
+  margin: 0.75rem 0 0;
+  color: var(--studyhub-text);
+  font-size: var(--studyhub-font-size-lg);
+  font-weight: 700;
+}
+
+.auth-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.auth-label {
+  margin: 0 0 0.5rem;
+  color: var(--studyhub-primary);
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.auth-header h1 {
+  margin: 0;
+  color: var(--studyhub-text);
+  font-size: var(--studyhub-font-size-2xl);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.auth-description {
+  margin: 0.75rem 0 0;
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-md);
+  line-height: 1.5;
+}
+
+.auth-form {
+  margin: 0;
+}
+
+.auth-form fieldset {
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--studyhub-border);
+  border-radius: 0.875rem;
+  background: var(--studyhub-surface);
+}
+
+.auth-form fieldset + fieldset {
+  margin-top: 1rem;
+}
+
+.auth-form legend {
+  margin: 0 0 1rem;
+  padding: 0 0.5rem;
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 600;
+}
+
+.auth-form ion-item {
+  --background: var(--studyhub-surface);
+  --border-color: var(--studyhub-border);
+  --border-width: 1px;
+  --border-style: solid;
+  --border-radius: 0.875rem;
+  --padding-start: 1rem;
+  --padding-end: 1rem;
+  --inner-padding-end: 0;
+  margin: 0;
+}
+
+.auth-form ion-item + ion-item {
+  margin-top: 0.75rem;
+}
+
+.auth-form ion-input {
+  --color: var(--studyhub-text);
+  --placeholder-color: var(--studyhub-text-secondary);
+  --placeholder-opacity: 1;
+}
+
+.register-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: var(--studyhub-primary-soft);
+  border-radius: 0.875rem;
+}
+
+.register-profile-image {
+  width: 4rem;
+  height: 4rem;
+  flex-shrink: 0;
+}
+
+.register-profile-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid var(--studyhub-border);
+  border-radius: 50%;
+}
+
+.register-profile ion-button {
+  margin: 0;
+  --border-color: var(--studyhub-primary);
+  --color: var(--studyhub-primary);
+  --border-radius: 0.875rem;
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 600;
+}
+
+.auth-button {
+  margin: 1.5rem 0 0;
+  --background: var(--studyhub-primary);
+  --color: #ffffff;
+  --border-radius: 0.875rem;
+  font-size: var(--studyhub-font-size-md);
+  font-weight: 600;
+}
+
+.auth-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.auth-footer p {
+  margin: 0;
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-sm);
+}
+ss .auth-footer a {
+  color: var(--studyhub-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-form ion-input span[slot="start"] {
+  margin-top: 1rem;
+  margin-right: 0.25rem;
+  color: var(--studyhub-text-secondary);
+  font-weight: 600;
+}
+
+.form-error {
+  margin: 0.5rem 0 0.5rem 0.5rem;
+  color: var(--studyhub-danger);
+  font-size: var(--studyhub-font-size-sm);
+}

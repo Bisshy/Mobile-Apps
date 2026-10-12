@@ -1,0 +1,25 @@
+{
+  "name": "Study Hub",
+  "short_name": "Study Hub",
+  "id": "/",
+  "description": "A study workspace for managing tasks and organizing your studies.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/images/PWAicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/PWAlargeicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

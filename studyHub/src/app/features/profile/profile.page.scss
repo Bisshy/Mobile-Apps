@@ -1,0 +1,178 @@
+ion-content {
+  --background: var(--studyhub-background);
+}
+
+.profile-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2rem;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.profile-image {
+  width: 6rem;
+  height: 6rem;
+  margin-bottom: 1rem;
+}
+
+.profile-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 3px solid var(--studyhub-surface);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
+}
+
+.profile-identity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-label {
+  margin: 0 0 0.5rem;
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 600;
+}
+
+.profile-identity h1 {
+  margin: 0;
+  color: var(--studyhub-text);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.profile-handle {
+  margin: 0.5rem 0 0;
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-md);
+}
+
+.profile-section {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-label {
+  margin: 0 0 0.5rem;
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 600;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: var(--studyhub-text);
+  font-size: var(--studyhub-font-size-lg);
+  font-weight: 700;
+}
+
+.profile-card {
+  overflow: hidden;
+  margin-top: 1rem;
+  background: var(--studyhub-surface);
+  border: 1px solid var(--studyhub-border);
+  border-radius: 1rem;
+}
+
+.profile-row {
+  padding: 1rem;
+  text-align: center;
+}
+
+.profile-row + .profile-row {
+  border-top: 1px solid var(--studyhub-border);
+}
+
+.profile-row-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.profile-row-label {
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-sm);
+}
+
+.profile-row-value {
+  overflow-wrap: anywhere;
+  color: var(--studyhub-text);
+  font-size: var(--studyhub-font-size-md);
+  font-weight: 600;
+}
+
+.profile-actions {
+  margin-top: 2rem;
+}
+
+.edit-profile-button {
+  margin-top: 1rem;
+  width: 100%;
+
+  --background: var(--studyhub-primary);
+  --color: var(--studyhub-white);
+  --border-radius: var(--studyhub-radius-md);
+
+  font-size: var(--studyhub-font-size-md);
+  font-weight: 600;
+  min-height: 3rem;
+}
+
+//--Desktop View
+
+@media (min-width: 1024px) {
+  .profile-page {
+    max-width: 900px;
+    padding: 3rem 2.5rem 4rem;
+  }
+
+  .profile-header {
+    margin-bottom: 3rem;
+  }
+
+  .profile-image {
+    width: 7rem;
+    height: 7rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .profile-identity h1 {
+    font-size: 2rem;
+  }
+
+  .profile-section {
+    max-width: 650px;
+    margin: 3rem auto 0;
+  }
+
+  .profile-card {
+    margin-top: 1.5rem;
+  }
+
+  .profile-row {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .profile-actions {
+    margin-top: 2.5rem;
+  }
+}

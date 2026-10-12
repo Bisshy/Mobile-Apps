@@ -1,0 +1,9 @@
+<ion-menu-button aria-label="Open navigation menu">
+  @if (profile && profile.photoURL) {
+    <img [src]="profile.photoURL" alt="Profile photo" />
+  } @else {
+    <span class="avatar-fallback">
+      {{ getInitial() }}
+    </span>
+  }
+</ion-menu-button>

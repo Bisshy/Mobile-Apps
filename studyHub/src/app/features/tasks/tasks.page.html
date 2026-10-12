@@ -1,0 +1,193 @@
+<app-app-header></app-app-header>
+
+<ion-content>
+  <main class="tasks-page">
+    <!-- Page Intro -->
+    <section class="tasks-intro" aria-labelledby="tasks-heading">
+      <p class="section-label">Stay Organized</p>
+
+      <h1 id="tasks-heading">My Tasks</h1>
+
+      <p class="tasks-description">
+        Keep track of your assignments, study sessions, and other tasks.
+      </p>
+    </section>
+
+    <!-- Shared Search -->
+    <app-search-bar
+      placeholder="Search tasks..."
+      [(value)]="searchTerm"
+    ></app-search-bar>
+
+    <!-- Active Tasks -->
+    <section class="tasks-section" aria-labelledby="all-tasks-heading">
+      <header class="section-heading">
+        <div>
+          <p class="card-label">Your schedule</p>
+
+          <h2 id="all-tasks-heading">All Tasks</h2>
+        </div>
+      </header>
+
+      <ul class="task-list">
+        @for (task of filteredActiveTasks; track task.id) {
+          <li>
+            <article
+              class="task-card"
+              [id]="'task-' + task.id"
+              [class.task-highlighted]="
+                highlightedTaskId === task.id
+              "
+              (touchstart)="onTaskTouchStart($event, task.id)"
+              (touchmove)="onTaskTouchMove($event, task.id)"
+              (touchend)="onTaskTouchEnd($event, task.id)"
+            >
+              <ion-checkbox
+                class="task-checkbox"
+                [checked]="false"
+                [attr.aria-label]="
+                  'Mark ' + task.title + ' as complete'
+                "
+                (ionChange)="toggleTask(task.id)"
+              ></ion-checkbox>
+
+              <section class="task-info">
+                <h3>{{ task.title }}</h3>
+
+                <p>
+                  {{ task.dueDate | date: 'MMM d, h:mm a' }} ·
+                  {{ task.priority }} priority
+                </p>
+              </section>
+
+              <div class="task-actions" aria-label="Task actions">
+                <ion-button
+                  fill="clear"
+                  size="small"
+                  type="button"
+                  (click)="openEditTask(task)"
+                  [attr.aria-label]="'Edit ' + task.title"
+                >
+                  Edit
+                </ion-button>
+
+                <ion-button
+                  fill="clear"
+                  size="small"
+                  color="danger"
+                  type="button"
+                  (click)="deleteTask(task.id)"
+                  [attr.aria-label]="'Delete ' + task.title"
+                >
+                  Delete
+                </ion-button>
+              </div>
+            </article>
+          </li>
+        } @empty {
+          <li class="empty-state">
+            <p>
+              {{ searchTerm
+                ? 'No tasks match your search.'
+                : 'You have no active tasks yet.' }}
+            </p>
+          </li>
+        }
+      </ul>
+    </section>
+
+    <!-- Completed Tasks -->
+    <section
+      class="completed-section"
+      aria-labelledby="completed-heading"
+    >
+      <header class="section-heading">
+        <div>
+          <p class="card-label">Finished</p>
+
+          <h2 id="completed-heading">Completed</h2>
+        </div>
+      </header>
+
+      <ul class="task-list">
+        @for (task of filteredCompletedTasks; track task.id) {
+          <li>
+            <article
+              class="task-card task-card-completed"
+              [id]="'task-' + task.id"
+              [class.task-highlighted]="
+                highlightedTaskId === task.id
+              "
+              (touchstart)="onTaskTouchStart($event, task.id)"
+              (touchmove)="onTaskTouchMove($event, task.id)"
+              (touchend)="onTaskTouchEnd($event, task.id)"
+            >
+              <ion-checkbox
+                class="task-checkbox"
+                [checked]="true"
+                [attr.aria-label]="'Reopen ' + task.title"
+                (ionChange)="reopenCompletedTask(task)"
+              ></ion-checkbox>
+
+              <section class="task-info">
+                <h3>{{ task.title }}</h3>
+
+                <p>
+                  {{ task.dueDate | date: 'MMM d, h:mm a' }} ·
+                  {{ task.priority }} priority
+                </p>
+              </section>
+
+              <div
+                class="task-actions"
+                aria-label="Completed task actions"
+              >
+                <ion-button
+                  fill="clear"
+                  size="small"
+                  color="danger"
+                  type="button"
+                  (click)="deleteTask(task.id)"
+                  [attr.aria-label]="'Delete ' + task.title"
+                >
+                  Delete
+                </ion-button>
+              </div>
+            </article>
+          </li>
+        } @empty {
+          <li class="empty-state">
+            <p>
+              {{ searchTerm
+                ? 'No completed tasks match your search.'
+                : 'You have no completed tasks yet.' }}
+            </p>
+          </li>
+        }
+      </ul>
+    </section>
+
+    <!-- Add Task -->
+    <section class="add-task-section">
+      <ion-button
+        class="add-task-button"
+        type="button"
+        expand="block"
+        (click)="openAddTask()"
+      >
+        + Add Task
+      </ion-button>
+    </section>
+  </main>
+</ion-content>
+
+<!-- Add / Edit Task Modal -->
+<ion-modal [isOpen]="isAddTaskModalOpen">
+  <ng-template>
+    <app-add-task
+      [taskToEdit]="taskToEdit"
+      [isReopeningCompletedTask]="isReopeningCompletedTask"
+      (close)="closeTaskModal()"
+    ></app-add-task>
+  </ng-template>
+</ion-modal>

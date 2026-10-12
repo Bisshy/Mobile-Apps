@@ -1,0 +1,51 @@
+{
+  "version": "5",
+  "specifiers": {
+    "jsr:@deno/installer-shell-setup@*": "0.3.4"
+  },
+  "jsr": {
+    "@deno/installer-shell-setup@0.3.4": {
+      "integrity": "48665d1a737d487cce6874bc97bba70a5aeffa7053aca3f60df93c6fab8963b4"
+    }
+  },
+  "workspace": {
+    "packageJson": {
+      "dependencies": [
+        "npm:@angular/build@22.1.8",
+        "npm:@angular/cli@22.1.8",
+        "npm:@angular/common@22.1.7",
+        "npm:@angular/compiler-cli@22.1.7",
+        "npm:@angular/compiler@22.1.7",
+        "npm:@angular/core@22.1.7",
+        "npm:@angular/forms@22.1.7",
+        "npm:@angular/language-service@22.1.7",
+        "npm:@angular/platform-browser@22.1.7",
+        "npm:@angular/router@22.1.7",
+        "npm:@angular/service-worker@22.1.7",
+        "npm:@capacitor/action-sheet@^8.1.1",
+        "npm:@capacitor/android@^8.5.2",
+        "npm:@capacitor/app@8.1.1",
+        "npm:@capacitor/camera@^8.2.4",
+        "npm:@capacitor/cli@8.5.2",
+        "npm:@capacitor/core@8.5.2",
+        "npm:@capacitor/haptics@8.0.2",
+        "npm:@capacitor/keyboard@8.0.5",
+        "npm:@capacitor/push-notifications@^8.1.2",
+        "npm:@capacitor/status-bar@8.0.3",
+        "npm:@ionic/angular-toolkit@13",
+        "npm:@ionic/angular@9",
+        "npm:@supabase/supabase-js@^2.117.2",
+        "npm:angular-eslint@22.0.0",
+        "npm:eslint@^10.10.0",
+        "npm:http-server@^14.1.1",
+        "npm:ionicons@^8.1.0",
+        "npm:jsdom@26",
+        "npm:rxjs@7.8",
+        "npm:tslib@^2.3.0",
+        "npm:typescript-eslint@^8.61.0",
+        "npm:typescript@6.0",
+        "npm:vitest@~4.0.18"
+      ]
+    }
+  }
+}

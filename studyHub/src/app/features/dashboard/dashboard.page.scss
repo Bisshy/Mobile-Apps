@@ -1,0 +1,273 @@
+ion-content {
+  --background: var(--studyhub-background);
+}
+
+.dashboard {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2rem;
+}
+
+.welcome {
+  margin-bottom: 2rem;
+}
+
+.welcome-label {
+  margin: 0 0 0.5rem;
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 600;
+  color: var(--studyhub-text-secondary);
+}
+
+.welcome h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--studyhub-text);
+}
+
+.welcome-text {
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--studyhub-text-secondary);
+}
+
+.progress-card {
+  padding: 1.5rem;
+  background-color: var(--studyhub-surface);
+  border: 1px solid var(--studyhub-border);
+  border-radius: 1rem;
+}
+
+.progress-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card-label {
+  margin: 0 0 0.5rem;
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 600;
+  color: var(--studyhub-text-secondary);
+}
+
+.progress-header h2 {
+  margin: 0;
+  font-size: var(--studyhub-font-size-2xl);
+  line-height: 1;
+  font-weight: 700;
+  color: var(--studyhub-text);
+}
+
+.progress-count {
+  font-size: var(--studyhub-font-size-sm);
+  color: var(--studyhub-text-secondary);
+}
+
+.progress-card ion-progress-bar {
+  margin-top: 1.25rem;
+}
+
+.progress-text {
+  margin: 0.75rem 0 0;
+  font-size: var(--studyhub-font-size-sm);
+  line-height: 1.5;
+  color: var(--studyhub-text-secondary);
+}
+
+.tasks-section,
+.upcoming-section {
+  margin-top: 2rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: var(--studyhub-font-size-lg);
+  font-weight: 700;
+  color: var(--studyhub-text);
+}
+
+.section-heading ion-button {
+  margin: 0;
+  --background: transparent;
+  --background-hover: transparent;
+  --background-activated: transparent;
+  --background-focused: transparent;
+  --color: var(--studyhub-primary);
+  --box-shadow: none;
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 600;
+}
+
+/* .section-heading ion-button:hover {
+  --color: var(--studyhub-primary-hover);
+} */
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--studyhub-surface);
+  border: 1px solid var(--studyhub-border);
+  border-radius: 1rem;
+}
+
+.task-info {
+  min-width: 0;
+}
+
+.task-info h3 {
+  margin: 0;
+  font-size: var(--studyhub-font-size-md);
+  font-weight: 600;
+  color: var(--studyhub-text);
+}
+
+.task-info p {
+  margin: 0.5rem 0 0;
+  font-size: var(--studyhub-font-size-sm);
+  color: var(--studyhub-text-secondary);
+}
+
+.task-checkbox {
+  flex-shrink: 0;
+  margin: 0;
+  --size: 2rem;
+  --border-radius: 50%;
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color: var(--studyhub-border);
+  --checkbox-background: var(--studyhub-surface);
+  --checkbox-background-checked: var(--studyhub-primary);
+  --border-color-checked: var(--studyhub-primary);
+  --checkmark-color: var(--studyhub-surface);
+}
+
+.task-completed .task-info h3 {
+  color: var(--studyhub-text-secondary);
+  text-decoration: line-through;
+}
+
+.task-completed .task-info p {
+  opacity: 0.7;
+}
+
+.task-priority {
+  font-weight: 600;
+}
+
+.priority-high {
+  color: var(--studyhub-danger);
+}
+
+.priority-medium {
+  color: var(--studyhub-warning);
+}
+
+.priority-low {
+  color: var(--studyhub-text-secondary);
+}
+
+.add-task-button {
+  margin-top: 1rem;
+  width: 100%;
+  --background: var(--studyhub-primary);
+  --color: var(--studyhub-white);
+  --border-radius: 0.875rem;
+  font-size: var(--studyhub-font-size-md);
+  font-weight: 600;
+  min-height: 3rem;
+}
+
+.empty-state {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  background: var(--studyhub-surface);
+  border: 1px dashed var(--studyhub-border);
+  border-radius: 1rem;
+  list-style: none;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: var(--studyhub-font-size-sm);
+  color: var(--studyhub-text-secondary);
+}
+
+ion-modal {
+  --background: var(--studyhub-surface);
+  --color: var(--studyhub-text);
+}
+
+/* =========================================
+   Desktop layout
+   ========================================= */
+
+@media (min-width: 1024px) {
+  .dashboard {
+    max-width: 1200px;
+    padding: 3rem 2.5rem 4rem;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1.5fr)
+      minmax(360px, 1fr);
+
+    gap: 2rem;
+  }
+
+  .welcome {
+    grid-column: 1 / -1;
+  }
+
+  .progress-card {
+    grid-column: 1 / -1;
+  }
+
+  .tasks-section {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .upcoming-section {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  .completed-section {
+    margin-top: 2rem;
+    grid-column: 2;
+    grid-row: 3 / span 2;
+
+    border-left: 1px solid var(--studyhub-border);
+
+    padding-left: 2rem;
+  }
+
+  .add-task-section {
+    grid-column: 1 / -1;
+    grid-row: 5;
+  }
+}

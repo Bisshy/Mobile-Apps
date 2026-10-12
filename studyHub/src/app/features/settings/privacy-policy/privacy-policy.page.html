@@ -1,0 +1,145 @@
+<ion-content>
+  <main class="privacy-page">
+    <header class="page-header">
+      <ion-button
+        fill="clear"
+        type="button"
+        (click)="goBack()"
+        aria-label="Go back"
+      >
+        ←
+      </ion-button>
+
+      <div>
+        <p class="section-label">Legal</p>
+        <h1>Privacy Policy</h1>
+      </div>
+    </header>
+
+    <section class="privacy-intro" aria-labelledby="privacy-heading">
+      <p class="card-label">Your Privacy</p>
+
+      <h2 id="privacy-heading">How Study Hub handles your information</h2>
+
+      <p>
+        This Privacy Policy explains what information Study Hub may collect, how
+        it may be used, and the choices available to you.
+      </p>
+
+      <p class="last-updated">Last updated: {{ lastUpdated }}</p>
+    </section>
+
+    <ion-accordion-group>
+      <!-- Information We Collect -->
+
+      <ion-accordion value="information">
+        <ion-item slot="header">
+          <ion-label> Information We Collect </ion-label>
+        </ion-item>
+
+        <div class="accordion-content" slot="content">
+          <p>
+            Study Hub may collect information you provide when creating or
+            managing your account, such as your username, handle, email address,
+            and profile information.
+          </p>
+        </div>
+      </ion-accordion>
+
+      <!-- How We Use Information -->
+
+      <ion-accordion value="usage">
+        <ion-item slot="header">
+          <ion-label> How We Use Information </ion-label>
+        </ion-item>
+
+        <div class="accordion-content" slot="content">
+          <p>
+            Information may be used to provide and improve Study Hub features,
+            manage your account, personalize your experience, and communicate
+            important information about the service.
+          </p>
+        </div>
+      </ion-accordion>
+
+      <!-- Profile Information -->
+
+      <ion-accordion value="profile">
+        <ion-item slot="header">
+          <ion-label> Profile Information </ion-label>
+        </ion-item>
+
+        <div class="accordion-content" slot="content">
+          <p>
+            Your profile may include information such as your username, handle,
+            email address, and profile photo. You can manage your profile
+            information through the profile settings available in the app.
+          </p>
+        </div>
+      </ion-accordion>
+
+      <!-- Tasks and Study Data -->
+
+      <ion-accordion value="study-data">
+        <ion-item slot="header">
+          <ion-label> Tasks &amp; Study Data </ion-label>
+        </ion-item>
+
+        <div class="accordion-content" slot="content">
+          <p>
+            Tasks, schedules, and other study-related information you create may
+            be stored to provide the app's organization and productivity
+            features.
+          </p>
+        </div>
+      </ion-accordion>
+
+      <!-- Data Storage -->
+
+      <ion-accordion value="storage">
+        <ion-item slot="header">
+          <ion-label> Data Storage </ion-label>
+        </ion-item>
+
+        <div class="accordion-content" slot="content">
+          <p>
+            Study Hub may use third-party services to securely store and process
+            information. The specific services and storage practices may change
+            as the application develops.
+          </p>
+        </div>
+      </ion-accordion>
+
+      <!-- Your Choices -->
+
+      <ion-accordion value="choices">
+        <ion-item slot="header">
+          <ion-label> Your Choices </ion-label>
+        </ion-item>
+
+        <div class="accordion-content" slot="content">
+          <p>
+            You may review and update available account information through your
+            profile settings. Additional privacy controls may be added as Study
+            Hub develops.
+          </p>
+        </div>
+      </ion-accordion>
+
+      <!-- Contact -->
+
+      <ion-accordion value="contact">
+        <ion-item slot="header">
+          <ion-label> Contact </ion-label>
+        </ion-item>
+
+        <div class="accordion-content" slot="content">
+          <p>
+            If you have questions about this Privacy Policy, contact the Study
+            Hub team through the support channel provided with the app.
+          </p>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </main>
+</ion-content>

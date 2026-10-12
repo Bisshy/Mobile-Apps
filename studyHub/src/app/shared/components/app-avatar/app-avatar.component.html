@@ -1,0 +1,9 @@
+<div class="avatar">
+  @if (photoUrl?.trim()) {
+    <img [src]="photoUrl" [alt]="alt" />
+  } @else {
+    <span class="avatar-initial" aria-label="User initial">
+      {{ initial }}
+    </span>
+  }
+</div>

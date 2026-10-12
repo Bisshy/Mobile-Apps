@@ -1,0 +1,75 @@
+<app-app-header></app-app-header>
+
+<ion-content>
+  <main class="profile-page">
+    <!-- Profile Header -->
+    <section class="profile-header" aria-labelledby="profile-heading">
+      <div class="profile-image">
+        <div class="profile-image">
+          <app-avatar
+            [username]="userProfile?.username || username"
+            [photoUrl]="userProfile?.photoURL"
+            alt="Student profile picture"
+          />
+        </div>
+      </div>
+
+      <div class="profile-identity">
+        <p class="section-label">Student Profile</p>
+
+        <h1 id="profile-heading">{{ username }}</h1>
+
+        <p class="profile-handle">{{ handle }}</p>
+      </div>
+    </section>
+
+    <!-- Account Information -->
+    <section class="profile-section" aria-labelledby="account-heading">
+      <header class="section-heading">
+        <div>
+          <p class="card-label">Account</p>
+
+          <h2 id="account-heading">Account Information</h2>
+        </div>
+      </header>
+
+      <div class="profile-card">
+        <div class="profile-row">
+          <div class="profile-row-content">
+            <span class="profile-row-label"> Username </span>
+
+            <span class="profile-row-value"> {{ username }} </span>
+          </div>
+        </div>
+
+        <div class="profile-row">
+          <div class="profile-row-content">
+            <span class="profile-row-label"> Handle </span>
+
+            <span class="profile-row-value"> {{ handle }} </span>
+          </div>
+        </div>
+
+        <div class="profile-row">
+          <div class="profile-row-content">
+            <span class="profile-row-label"> Email </span>
+
+            <span class="profile-row-value"> {{ email }} </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile Actions -->
+    <section class="profile-actions" aria-label="Profile actions">
+      <ion-button
+        class="edit-profile-button"
+        expand="block"
+        type="button"
+        (click)="editProfile()"
+      >
+        Edit Profile
+      </ion-button>
+    </section>
+  </main>
+</ion-content>

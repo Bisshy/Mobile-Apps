@@ -1,0 +1,20 @@
+<ion-button
+  fill="clear"
+  aria-label="Notifications"
+  type="button"
+  (click)="openNotifications()"
+>
+  <ion-icon
+    slot="icon-only"
+    name="notifications-outline"
+  ></ion-icon>
+
+  @if (unreadCount > 0) {
+    <span
+      class="notification-badge"
+      aria-label="Unread notifications"
+    >
+      {{ unreadCount > 99 ? "99+" : unreadCount }}
+    </span>
+  }
+</ion-button>

@@ -1,0 +1,187 @@
+ion-content {
+  --background: var(--studyhub-backgr);
+}
+
+.about-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var(--studyhub-space-lg) var(--studyhub-space-md)
+    var(--studyhub-space-xl);
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: var(--studyhub-space-sm);
+  margin-bottom: var(--studyhub-space-xl);
+}
+
+.page-header ion-button {
+  margin: 0;
+  --color: var(--studyhub-text);
+  --padding-start: 0;
+  --padding-end: 0;
+}
+
+.page-header h1 {
+  margin: 0;
+  color: var(--studyhub-text);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.section-label {
+  margin: 0 0 var(--studyhub-space-sm);
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 600;
+}
+
+.about-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--studyhub-space-xl);
+  text-align: center;
+}
+
+.app-icon {
+  width: 6rem;
+  height: 6rem;
+  margin-bottom: var(--studyhub-space-md);
+  overflow: hidden;
+  border-radius: var(--studyhub-radius-xl);
+  background: var(--studyhub-surface);
+  border: 1px solid var(--studyhub-border);
+}
+
+.app-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-hero h2 {
+  margin: 0;
+  color: var(--studyhub-text);
+  font-size: var(--studyhub-font-size-xl);
+  font-weight: 700;
+}
+
+.about-description {
+  max-width: 550px;
+  margin: var(--studyhub-space-sm) 0 0;
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-md);
+  line-height: 1.6;
+}
+
+.about-section {
+  margin-top: var(--studyhub-space-lg);
+}
+
+.about-card {
+  overflow: hidden;
+  background: var(--studyhub-surface);
+  border: 1px solid var(--studyhub-border);
+  border-radius: var(--studyhub-radius-xl);
+}
+
+.about-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--studyhub-space-md);
+  padding: var(--studyhub-space-md);
+}
+
+.about-row + .about-row {
+  border-top: 1px solid var(--studyhub-border);
+}
+
+.about-label {
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-sm);
+}
+
+.about-value {
+  color: var(--studyhub-text);
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 600;
+}
+
+.about-purpose {
+  padding: var(--studyhub-space-lg);
+}
+
+.card-label {
+  margin: 0 0 var(--studyhub-space-sm);
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 600;
+}
+
+.about-purpose h2 {
+  margin: 0;
+  color: var(--studyhub-text);
+  font-size: var(--studyhub-font-size-lg);
+  font-weight: 700;
+}
+
+.about-purpose p:last-child {
+  margin: var(--studyhub-space-sm) 0 0;
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-sm);
+  line-height: 1.6;
+}
+
+//--Desktop view
+
+@media (min-width: 1024px) {
+  .about-page {
+    max-width: 900px;
+    padding: 3rem 2.5rem 4rem;
+  }
+
+  .page-header {
+    margin-bottom: 3rem;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .about-hero {
+    margin-bottom: 3rem;
+  }
+
+  .app-icon {
+    width: 7rem;
+    height: 7rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-description {
+    max-width: 650px;
+    font-size: var(--studyhub-font-size-md);
+  }
+
+  .about-section {
+    max-width: 650px;
+    margin: 3rem auto 0;
+  }
+
+  .about-row {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .about-purpose {
+    padding: 2rem;
+  }
+}

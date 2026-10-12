@@ -1,0 +1,250 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+/* Study Hub design tokens*/
+:root {
+  --studyhub-primary: #2563eb;
+  --studyhub-primary-soft: #eff6ff;
+
+  --studyhub-backgr: #f8fafc;
+  --studyhub-background: #f8fafc;
+  --studyhub-surface: #ffffff;
+
+  --studyhub-text: #1e293b;
+  --studyhub-text-secondary: #64748b;
+
+  --studyhub-success: #16a34a;
+  --studyhub-warning: #f59e0b;
+  --studyhub-danger: #dc2626;
+
+  --studyhub-border: #e2e8f0;
+
+  --studyhub-white: #ffffff;
+
+  --studyhub-font-size-sm: 0.875rem;
+  --studyhub-font-size-md: 1rem;
+  --studyhub-font-size-lg: 1.125rem;
+  --studyhub-font-size-xl: 1.5rem;
+  --studyhub-font-size-2xl: 2rem;
+
+  --studyhub-radius-md: 0.875rem;
+  --studyhub-radius-lg: 1rem;
+  --studyhub-radius-xl: 1.25rem;
+
+  --studyhub-space-sm: 0.5rem;
+  --studyhub-space-md: 1rem;
+  --studyhub-space-lg: 1.5rem;
+  --studyhub-space-xl: 2rem;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--studyhub-surface);
+}
+
+.menu-profile {
+  flex-shrink: 0;
+  padding: 1.5rem 1.25rem;
+  border-bottom: 1px solid var(--studyhub-border);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.menu-profile:hover {
+  background-color: var(--studyhub-primary-soft);
+}
+
+.menu-profile:focus-visible {
+  outline: 2px solid var(--studyhub-primary);
+  outline-offset: -2px;
+}
+
+.menu-profile-image {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.menu-profile-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid var(--studyhub-border);
+  border-radius: 50%;
+}
+
+.menu-profile-info h2 {
+  margin: 0;
+  color: var(--studyhub-text);
+  font-size: var(--studyhub-font-size-md);
+  font-weight: 700;
+}
+
+.menu-profile-info p {
+  margin: 0.25rem 0 0;
+  color: var(--studyhub-text-secondary);
+  font-size: var(--studyhub-font-size-sm);
+  font-weight: 500;
+}
+
+.menu-navigation {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.menu-list {
+  padding: 1rem;
+  background: transparent;
+}
+
+.menu-list ion-item {
+  --background: transparent;
+  --color: var(--studyhub-text);
+  --padding-start: 1rem;
+  --padding-end: 1rem;
+  --inner-padding-end: 0;
+  --min-height: 3rem;
+
+  margin-bottom: 0.5rem;
+  border-radius: 0.875rem;
+}
+
+.menu-list ion-item ion-icon {
+  margin-inline-end: 1rem;
+  color: var(--studyhub-text-secondary);
+  font-size: 1.25rem;
+  stroke-width: 2.5;
+}
+
+.menu-list ion-item ion-label {
+  font-size: var(--studyhub-font-size-md);
+  font-weight: 700;
+}
+
+.menu-list ion-item.active-menu-item {
+  --background: var(--studyhub-primary-soft);
+  --color: var(--studyhub-primary);
+}
+
+.menu-list ion-item.active-menu-item ion-icon {
+  color: var(--studyhub-primary);
+}
+
+.menu-list ion-item.active-menu-item ion-label {
+  font-weight: 700;
+}
+
+.menu-footer {
+  flex-shrink: 0;
+  padding: 0 1rem 1rem;
+  border-top: 1px solid var(--studyhub-border);
+}
+
+.menu-footer ion-item {
+  --background: transparent;
+  --color: var(--studyhub-danger);
+  --padding-start: 1rem;
+  --padding-end: 1rem;
+  --inner-padding-end: 0;
+  --min-height: 3rem;
+
+  border-radius: 0.875rem;
+}
+
+.menu-footer ion-item ion-icon {
+  margin-inline-end: 1rem;
+  color: var(--studyhub-danger);
+  font-size: 1.25rem;
+}
+
+html.dark {
+  --studyhub-backgr: #0f172a;
+  --studyhub-background: #0f172a;
+  --studyhub-surface: #1e293b;
+
+  --studyhub-text: #f8fafc;
+  --studyhub-text-secondary: #94a3b8;
+
+  --studyhub-border: #334155;
+  --studyhub-primary-soft: #1e3a8a;
+
+  --ion-background-color: #0f172a;
+  --ion-text-color: #f8fafc;
+
+  --ion-color-step-50: #172033;
+  --ion-color-step-100: #1e293b;
+  --ion-color-step-150: #263449;
+  --ion-color-step-200: #334155;
+}
+
+ion-action-sheet.profile-photo-action-sheet {
+  --background: var(--studyhub-surface);
+  --color: var(--studyhub-text);
+  --button-background: var(--studyhub-surface);
+  --button-background-selected: var(--studyhub-border);
+  --button-color: var(--studyhub-text);
+  --button-color-selected: var(--studyhub-primary);
+  --backdrop-opacity: 0.45;
+}
+
+ion-action-sheet.profile-photo-action-sheet::part(title) {
+  color: var(--studyhub-text);
+}
+
+ion-action-sheet.profile-photo-action-sheet::part(button) {
+  color: var(--studyhub-text);
+}
+
+ion-action-sheet.profile-photo-action-sheet::part(cancel) {
+  color: var(--studyhub-primary);
+  font-weight: 600;
+}

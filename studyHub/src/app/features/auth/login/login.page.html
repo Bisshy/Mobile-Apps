@@ -1,0 +1,203 @@
+<ion-content>
+  <main class="auth-page">
+    <!-- Brand -->
+    <div class="auth-brand">
+      <img src="assets/images/mastericon.png" alt="Study Hub" />
+
+      <p>Study Hub</p>
+    </div>
+
+    <section class="auth-container" aria-labelledby="login-heading">
+      <!-- EMAIL STEP -->
+      @if (currentStep === 'email') {
+
+      <header class="auth-header">
+        <p class="auth-label">Welcome back</p>
+
+        <h1 id="login-heading">Log in to Study Hub</h1>
+
+        <p class="auth-description">Enter your email to continue.</p>
+      </header>
+
+      <form
+        class="auth-form"
+        #loginForm="ngForm"
+        (ngSubmit)="continueToPassword(loginForm)"
+      >
+        <fieldset>
+          <legend>Account details</legend>
+
+          <ion-item>
+            <ion-input
+              label="Email"
+              labelPlacement="stacked"
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              [(ngModel)]="email"
+              required
+              email
+            >
+            </ion-input>
+          </ion-item>
+
+          @if ( loginForm.controls["email"]?.invalid &&
+          loginForm.controls["email"]?.touched ) {
+
+          <p class="form-error">Please enter a valid email address.</p>
+
+          }
+        </fieldset>
+
+        <ion-button
+          class="auth-button"
+          type="submit"
+          expand="block"
+          [disabled]="loginForm.invalid"
+        >
+          Continue
+        </ion-button>
+      </form>
+
+      <footer class="auth-footer">
+        <p>
+          Don't have an account?
+
+          <a routerLink="/register"> Create one </a>
+        </p>
+      </footer>
+
+      }
+
+      <!-- PASSWORD STEP -->
+      @if (currentStep === 'password') {
+
+      <header class="auth-header">
+        <p class="auth-label">Welcome back</p>
+
+        <h1 id="login-heading">Welcome back</h1>
+
+        <p class="auth-description">Enter your password to continue.</p>
+      </header>
+
+      <form class="auth-form" #passwordForm="ngForm" (ngSubmit)="login()">
+        <fieldset>
+          <legend>Account</legend>
+
+          <!-- Account preview -->
+          <div class="login-profile">
+            <div class="login-profile-image">
+              <app-avatar
+                [username]="loginProfile?.username"
+                [photoUrl]="loginProfile?.photoURL"
+                alt="Account profile picture"
+              />
+            </div>
+
+            <div class="login-profile-info">
+              <h2>{{ loginProfile?.username || "Study Student" }}</h2>
+
+              <p>{{ email }}</p>
+            </div>
+          </div>
+
+          <!-- Password -->
+          <ion-item>
+            <ion-input
+              label="Password"
+              labelPlacement="stacked"
+              [type]="showPassword ? 'text' : 'password'"
+              name="password"
+              placeholder="Enter your password"
+              [(ngModel)]="password"
+              required
+            >
+              <ion-button
+                slot="end"
+                fill="clear"
+                type="button"
+                aria-label="Toggle password visibility"
+                (click)="togglePasswordVisibility()"
+              >
+                <ion-icon
+                  [name]="
+                    showPassword
+                      ? 'eye-off-outline'
+                      : 'eye-outline'
+                  "
+                >
+                </ion-icon>
+              </ion-button>
+            </ion-input>
+          </ion-item>
+
+          @if ( passwordForm.controls["password"]?.invalid &&
+          passwordForm.controls["password"]?.touched ) {
+
+          <p class="form-error">Please enter your password.</p>
+
+          }
+        </fieldset>
+
+        <ion-button
+          class="auth-button"
+          type="submit"
+          expand="block"
+          [disabled]="passwordForm.invalid"
+        >
+          Log In
+        </ion-button>
+      </form>
+
+      <div class="forgot-password">
+        <a routerLink="/forgot-password"> Forgot your password? </a>
+      </div>
+
+      }
+
+      <!-- ACCOUNT NOT FOUND -->
+      @if (currentStep === 'not-found') {
+
+      <header class="auth-header">
+        <p class="auth-label">Account not found</p>
+
+        <h1 id="login-heading">We couldn't find your account</h1>
+
+        <p class="auth-description">
+          There is no Study Hub account registered with
+          <strong>{{ email }}</strong>.
+        </p>
+      </header>
+
+      <section
+        class="account-not-found"
+        aria-labelledby="account-not-found-heading"
+      >
+        <h2 id="account-not-found-heading">Create your Study Hub account</h2>
+
+        <p>Register to start managing your tasks, profile, and studies.</p>
+
+        <ion-button
+          class="auth-button"
+          type="button"
+          expand="block"
+          routerLink="/register"
+        >
+          Create Account
+        </ion-button>
+
+        <ion-button
+          class="try-again-button"
+          type="button"
+          fill="clear"
+          expand="block"
+          (click)="tryAnotherEmail()"
+        >
+          Try another email
+        </ion-button>
+      </section>
+
+      }
+    </section>
+  </main>
+</ion-content>

@@ -1,0 +1,196 @@
+<app-app-header></app-app-header>
+
+<ion-content>
+  <main class="dashboard">
+    <section class="welcome" aria-labelledby="welcome-heading">
+      <p class="welcome-label">welcome back</p>
+
+      <h1 id="welcome-heading">{{ greeting }}, {{ studentName }} &#128075;</h1>
+
+      <p class="welcome-text">
+        Here's what's happening with your studies today.
+      </p>
+    </section>
+
+    <article class="progress-card" aria-labelledby="progress-heading">
+      <header class="progress-header">
+        <div>
+          <p class="card-label">Today's Progress</p>
+
+          <h2 id="progress-heading">{{ progressDisplay }}% complete</h2>
+        </div>
+
+        <span class="progress-count">
+          {{ completedTaskCount }} of {{ todayTasks.length }} tasks
+        </span>
+      </header>
+
+      <ion-progress-bar [value]="progressPercentage"></ion-progress-bar>
+
+      <p class="progress-text">You're making good progress. Keep going!</p>
+    </article>
+
+    <!-- Today's Tasks -->
+    <section class="tasks-section" aria-labelledby="tasks-heading">
+      <header class="section-heading">
+        <div>
+          <p class="card-label">Today</p>
+
+          <h2 id="tasks-heading">Today's Tasks</h2>
+        </div>
+
+        <ion-button type="button" (click)="viewAllTasks()">
+          See all +
+        </ion-button>
+      </header>
+
+      <ul class="task-list">
+        @for (task of dashboardTodayTasks; track task.id) {
+
+        <li>
+          <article class="task-card" [class.task-completed]="task.completed">
+            <ion-checkbox
+              class="task-checkbox"
+              [checked]="task.completed"
+              (ionChange)="toggleTask(task.id)"
+              [attr.aria-label]="
+                'Mark ' + task.title + ' as complete'
+              "
+            ></ion-checkbox>
+
+            <section class="task-info">
+              <h3>{{ task.title }}</h3>
+
+              <p>
+                {{ task.dueDate | date: 'MMM d, h:mm a' }} ·
+
+                <span
+                  class="task-priority"
+                  [class.priority-high]="task.priority === 'High'"
+                  [class.priority-medium]="task.priority === 'Medium'"
+                  [class.priority-low]="task.priority === 'Low'"
+                >
+                  {{ task.priority }} priority
+                </span>
+              </p>
+            </section>
+          </article>
+        </li>
+
+        } @empty {
+
+        <li class="empty-state">
+          <p>No tasks scheduled for today.</p>
+        </li>
+
+        }
+      </ul>
+    </section>
+
+    <!-- Upcoming Tasks -->
+    <section class="upcoming-section" aria-labelledby="upcoming-heading">
+      <header class="section-heading">
+        <div>
+          <p class="card-label">Coming up</p>
+
+          <h2 id="upcoming-heading">Upcoming Tasks</h2>
+        </div>
+      </header>
+
+      <ul class="task-list">
+        @for (task of upcomingTasks; track task.id) {
+
+        <li>
+          <article class="task-card">
+            <section class="task-info">
+              <h3>{{ task.title }}</h3>
+
+              <p>
+                {{ task.dueDate | date: 'MMM d, h:mm a' }} ·
+
+                <span
+                  class="task-priority"
+                  [class.priority-high]="task.priority === 'High'"
+                  [class.priority-medium]="task.priority === 'Medium'"
+                  [class.priority-low]="task.priority === 'Low'"
+                >
+                  {{ task.priority }} priority
+                </span>
+              </p>
+            </section>
+          </article>
+        </li>
+
+        } @empty {
+
+        <li class="empty-state">
+          <p>No upcoming tasks.</p>
+        </li>
+
+        }
+      </ul>
+    </section>
+
+    <!-- Completed Tasks -->
+    <section class="completed-section" aria-labelledby="completed-heading">
+      <header class="section-heading">
+        <div>
+          <p class="card-label">Finished</p>
+
+          <h2 id="completed-heading">Completed</h2>
+        </div>
+      </header>
+
+      <ul class="task-list">
+        @for (task of completedTasks; track task.id) {
+
+        <li>
+          <article class="task-card task-completed">
+            <section class="task-info">
+              <h3>{{ task.title }}</h3>
+
+              <p>
+                {{ task.dueDate | date: 'MMM d, h:mm a' }} ·
+
+                <span
+                  class="task-priority"
+                  [class.priority-high]="task.priority === 'High'"
+                  [class.priority-medium]="task.priority === 'Medium'"
+                  [class.priority-low]="task.priority === 'Low'"
+                >
+                  {{ task.priority }} priority
+                </span>
+              </p>
+            </section>
+          </article>
+        </li>
+
+        } @empty {
+
+        <li class="empty-state">
+          <p>No completed tasks.</p>
+        </li>
+
+        }
+      </ul>
+    </section>
+
+    <!-- Add Task -->
+    <section class="add-task-section">
+      <ion-button
+        class="add-task-button"
+        type="button"
+        expand="block"
+        (click)="isAddTaskModalOpen = true"
+      >
+        + Add Task
+      </ion-button>
+    </section>
+  </main>
+</ion-content>
+
+<ion-modal [isOpen]="isAddTaskModalOpen">
+  <ng-template>
+    <app-add-task (close)="isAddTaskModalOpen = false"></app-add-task>
+  </ng-template>
+</ion-modal>
